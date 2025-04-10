@@ -47,6 +47,7 @@
             materialCard1.Padding = new Padding(14);
             materialCard1.Size = new Size(130, 90);
             materialCard1.TabIndex = 0;
+            materialCard1.Click += materialCard1_Click;
             // 
             // daylbl
             // 

@@ -47,7 +47,8 @@ namespace ArcadeSync_Project.Controls
             for (int i = 1; i <= days; i++)
             {
                 ActualDayControl ucdays = new ActualDayControl();
-                ucdays.days(i);
+                ucdays.SetDate(i, month, year);
+                ucdays.ParentCalendar = this;
                 daycontainer.Controls.Add(ucdays);
             }
         }
@@ -122,6 +123,14 @@ namespace ArcadeSync_Project.Controls
                 ucdays.days(i);
                 daycontainer.Controls.Add(ucdays);
             }
+        }
+
+        public void OpenLogForm(DateTime date)
+        {
+            CalendarLogReportForm form = new CalendarLogReportForm(date);
+            form.ShowDialog();
+            daycontainer.Controls.Clear();
+            displayDays();
         }
     }
 }
