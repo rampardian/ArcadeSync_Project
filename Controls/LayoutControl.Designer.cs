@@ -28,123 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox10 = new PictureBox();
-            pictureBox11 = new PictureBox();
             transferLayoutbtn = new MaterialSkin.Controls.MaterialButton();
             saveLayoutbtn = new MaterialSkin.Controls.MaterialButton();
-            pictureBox12 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            A1 = new PictureBox();
+            A2 = new PictureBox();
+            A3 = new PictureBox();
+            B2 = new PictureBox();
+            B1 = new PictureBox();
+            B3 = new PictureBox();
+            C3 = new PictureBox();
+            C2 = new PictureBox();
+            C1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)A1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)A2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)A3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)B2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)B1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)B3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.LAYOUT_2_1;
-            pictureBox1.Location = new Point(30, 30);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(971, 526);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(639, 234);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(71, 62);
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Location = new Point(562, 234);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(71, 62);
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Location = new Point(683, 302);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(71, 62);
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Location = new Point(760, 302);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(71, 62);
-            pictureBox5.TabIndex = 4;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Location = new Point(909, 302);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(71, 62);
-            pictureBox6.TabIndex = 5;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.Location = new Point(467, 250);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(71, 62);
-            pictureBox7.TabIndex = 6;
-            pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Location = new Point(372, 250);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(71, 62);
-            pictureBox8.TabIndex = 7;
-            pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Location = new Point(325, 155);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(71, 62);
-            pictureBox9.TabIndex = 8;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.Location = new Point(467, 377);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(71, 62);
-            pictureBox10.TabIndex = 9;
-            pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            pictureBox11.Location = new Point(575, 320);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(71, 62);
-            pictureBox11.TabIndex = 10;
-            pictureBox11.TabStop = false;
             // 
             // transferLayoutbtn
             // 
@@ -186,64 +92,131 @@
             saveLayoutbtn.UseAccentColor = false;
             saveLayoutbtn.UseVisualStyleBackColor = true;
             // 
-            // pictureBox12
+            // pictureBox1
             // 
-            pictureBox12.Location = new Point(832, 302);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(71, 62);
-            pictureBox12.TabIndex = 37;
-            pictureBox12.TabStop = false;
+            pictureBox1.Image = Properties.Resources.c947a825_9661_4de7_8f79_0c5e2a6ac36d;
+            pictureBox1.Location = new Point(163, 55);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(701, 493);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 37;
+            pictureBox1.TabStop = false;
+            // 
+            // A1
+            // 
+            A1.Location = new Point(314, 128);
+            A1.Name = "A1";
+            A1.Size = new Size(85, 52);
+            A1.TabIndex = 39;
+            A1.TabStop = false;
+            // 
+            // A2
+            // 
+            A2.Location = new Point(471, 128);
+            A2.Name = "A2";
+            A2.Size = new Size(85, 52);
+            A2.TabIndex = 40;
+            A2.TabStop = false;
+            // 
+            // A3
+            // 
+            A3.Location = new Point(627, 128);
+            A3.Name = "A3";
+            A3.Size = new Size(85, 52);
+            A3.TabIndex = 41;
+            A3.TabStop = false;
+            // 
+            // B2
+            // 
+            B2.Location = new Point(471, 268);
+            B2.Name = "B2";
+            B2.Size = new Size(85, 69);
+            B2.TabIndex = 42;
+            B2.TabStop = false;
+            // 
+            // B1
+            // 
+            B1.Location = new Point(226, 268);
+            B1.Name = "B1";
+            B1.Size = new Size(85, 61);
+            B1.TabIndex = 43;
+            B1.TabStop = false;
+            // 
+            // B3
+            // 
+            B3.Location = new Point(717, 268);
+            B3.Name = "B3";
+            B3.Size = new Size(85, 61);
+            B3.TabIndex = 44;
+            B3.TabStop = false;
+            // 
+            // C3
+            // 
+            C3.Location = new Point(627, 421);
+            C3.Name = "C3";
+            C3.Size = new Size(85, 52);
+            C3.TabIndex = 47;
+            C3.TabStop = false;
+            // 
+            // C2
+            // 
+            C2.Location = new Point(471, 421);
+            C2.Name = "C2";
+            C2.Size = new Size(85, 52);
+            C2.TabIndex = 46;
+            C2.TabStop = false;
+            // 
+            // C1
+            // 
+            C1.Location = new Point(314, 421);
+            C1.Name = "C1";
+            C1.Size = new Size(85, 52);
+            C1.TabIndex = 45;
+            C1.TabStop = false;
             // 
             // LayoutControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pictureBox12);
+            Controls.Add(C3);
+            Controls.Add(C2);
+            Controls.Add(C1);
+            Controls.Add(B3);
+            Controls.Add(B1);
+            Controls.Add(B2);
+            Controls.Add(A3);
+            Controls.Add(A2);
+            Controls.Add(A1);
+            Controls.Add(pictureBox1);
             Controls.Add(transferLayoutbtn);
             Controls.Add(saveLayoutbtn);
-            Controls.Add(pictureBox11);
-            Controls.Add(pictureBox10);
-            Controls.Add(pictureBox9);
-            Controls.Add(pictureBox8);
-            Controls.Add(pictureBox7);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
             Name = "LayoutControl";
             Size = new Size(1080, 665);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)A1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)A2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)A3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)B2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)B1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)B3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox11;
         private MaterialSkin.Controls.MaterialButton transferLayoutbtn;
         private MaterialSkin.Controls.MaterialButton saveLayoutbtn;
-        private PictureBox pictureBox12;
+        private PictureBox pictureBox1;
+        private PictureBox A1;
+        private PictureBox A2;
+        private PictureBox A3;
+        private PictureBox B2;
+        private PictureBox B1;
+        private PictureBox B3;
+        private PictureBox C3;
+        private PictureBox C2;
+        private PictureBox C1;
     }
 }

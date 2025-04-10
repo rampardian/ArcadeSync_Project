@@ -73,6 +73,16 @@ namespace ArcadeSync_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap c947a825_9661_4de7_8f79_0c5e2a6ac36d {
+            get {
+                object obj = ResourceManager.GetObject("c947a825-9661-4de7-8f79-0c5e2a6ac36d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download__2_ {
             get {
                 object obj = ResourceManager.GetObject("download (2)", resourceCulture);
