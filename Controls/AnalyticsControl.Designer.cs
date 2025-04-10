@@ -87,6 +87,7 @@
             showDatabtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             showDatabtn.UseAccentColor = false;
             showDatabtn.UseVisualStyleBackColor = true;
+            showDatabtn.Click += showDatabtn_Click;
             // 
             // AnalyticsControl
             // 
