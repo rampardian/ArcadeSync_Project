@@ -35,7 +35,7 @@
             label3 = new Label();
             arcadePicpanel = new Panel();
             ArcNamelbl = new Label();
-            payMethodtxtbx = new MaterialSkin.Controls.MaterialComboBox();
+            payMethodcmbbx = new MaterialSkin.Controls.MaterialComboBox();
             rentNotestxtbx = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             label4 = new Label();
             label5 = new Label();
@@ -61,6 +61,7 @@
             amounttxtbx.TabIndex = 0;
             amounttxtbx.Text = "";
             amounttxtbx.TrailingIcon = null;
+            amounttxtbx.TextChanged += amounttxtbx_TextChanged;
             // 
             // label1
             // 
@@ -85,7 +86,7 @@
             rentChangetxtbx.AnimateReadOnly = false;
             rentChangetxtbx.BorderStyle = BorderStyle.None;
             rentChangetxtbx.Depth = 0;
-            rentChangetxtbx.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            rentChangetxtbx.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             rentChangetxtbx.LeadingIcon = null;
             rentChangetxtbx.Location = new Point(173, 268);
             rentChangetxtbx.MaxLength = 50;
@@ -122,35 +123,35 @@
             ArcNamelbl.TabIndex = 8;
             ArcNamelbl.Text = "ArcadeName";
             // 
-            // payMethodtxtbx
+            // payMethodcmbbx
             // 
-            payMethodtxtbx.AutoResize = false;
-            payMethodtxtbx.BackColor = Color.FromArgb(255, 255, 255);
-            payMethodtxtbx.Depth = 0;
-            payMethodtxtbx.DrawMode = DrawMode.OwnerDrawVariable;
-            payMethodtxtbx.DropDownHeight = 174;
-            payMethodtxtbx.DropDownStyle = ComboBoxStyle.DropDownList;
-            payMethodtxtbx.DropDownWidth = 121;
-            payMethodtxtbx.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            payMethodtxtbx.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            payMethodtxtbx.FormattingEnabled = true;
-            payMethodtxtbx.IntegralHeight = false;
-            payMethodtxtbx.ItemHeight = 43;
-            payMethodtxtbx.Items.AddRange(new object[] { "Cash", "Gcash", "Card", "Bank Transfer" });
-            payMethodtxtbx.Location = new Point(173, 324);
-            payMethodtxtbx.MaxDropDownItems = 4;
-            payMethodtxtbx.MouseState = MaterialSkin.MouseState.OUT;
-            payMethodtxtbx.Name = "payMethodtxtbx";
-            payMethodtxtbx.Size = new Size(327, 49);
-            payMethodtxtbx.StartIndex = 0;
-            payMethodtxtbx.TabIndex = 9;
+            payMethodcmbbx.AutoResize = false;
+            payMethodcmbbx.BackColor = Color.FromArgb(255, 255, 255);
+            payMethodcmbbx.Depth = 0;
+            payMethodcmbbx.DrawMode = DrawMode.OwnerDrawVariable;
+            payMethodcmbbx.DropDownHeight = 174;
+            payMethodcmbbx.DropDownStyle = ComboBoxStyle.DropDownList;
+            payMethodcmbbx.DropDownWidth = 121;
+            payMethodcmbbx.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            payMethodcmbbx.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            payMethodcmbbx.FormattingEnabled = true;
+            payMethodcmbbx.IntegralHeight = false;
+            payMethodcmbbx.ItemHeight = 43;
+            payMethodcmbbx.Items.AddRange(new object[] { "Cash", "Gcash", "Card", "Bank Transfer" });
+            payMethodcmbbx.Location = new Point(173, 324);
+            payMethodcmbbx.MaxDropDownItems = 4;
+            payMethodcmbbx.MouseState = MaterialSkin.MouseState.OUT;
+            payMethodcmbbx.Name = "payMethodcmbbx";
+            payMethodcmbbx.Size = new Size(327, 49);
+            payMethodcmbbx.StartIndex = 0;
+            payMethodcmbbx.TabIndex = 9;
             // 
             // rentNotestxtbx
             // 
             rentNotestxtbx.BackColor = Color.FromArgb(255, 255, 255);
             rentNotestxtbx.BorderStyle = BorderStyle.None;
             rentNotestxtbx.Depth = 0;
-            rentNotestxtbx.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            rentNotestxtbx.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             rentNotestxtbx.ForeColor = Color.FromArgb(222, 0, 0, 0);
             rentNotestxtbx.Location = new Point(173, 379);
             rentNotestxtbx.MouseState = MaterialSkin.MouseState.HOVER;
@@ -182,7 +183,7 @@
             rentalCosttxtbx.AnimateReadOnly = false;
             rentalCosttxtbx.BorderStyle = BorderStyle.None;
             rentalCosttxtbx.Depth = 0;
-            rentalCosttxtbx.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            rentalCosttxtbx.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             rentalCosttxtbx.LeadingIcon = null;
             rentalCosttxtbx.Location = new Point(173, 156);
             rentalCosttxtbx.MaxLength = 50;
@@ -213,6 +214,7 @@
             recordTransactbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             recordTransactbtn.UseAccentColor = false;
             recordTransactbtn.UseVisualStyleBackColor = true;
+            recordTransactbtn.Click += recordTransactbtn_Click;
             // 
             // cancelTransactbtn
             // 
@@ -256,7 +258,7 @@
             Controls.Add(rentalCosttxtbx);
             Controls.Add(label4);
             Controls.Add(rentNotestxtbx);
-            Controls.Add(payMethodtxtbx);
+            Controls.Add(payMethodcmbbx);
             Controls.Add(ArcNamelbl);
             Controls.Add(arcadePicpanel);
             Controls.Add(label3);
@@ -280,7 +282,7 @@
         private Label label3;
         private Panel arcadePicpanel;
         private Label ArcNamelbl;
-        private MaterialSkin.Controls.MaterialComboBox payMethodtxtbx;
+        private MaterialSkin.Controls.MaterialComboBox payMethodcmbbx;
         private MaterialSkin.Controls.MaterialMultiLineTextBox rentNotestxtbx;
         private Label label4;
         private Label label5;

@@ -44,16 +44,20 @@
             label7 = new Label();
             RentPayTransactbtn = new MaterialSkin.Controls.MaterialButton();
             label8 = new Label();
-            textBox1 = new TextBox();
+            EventNametxtbx = new TextBox();
             label9 = new Label();
-            RentMachine = new TextBox();
+            RentMachinetxtbx = new TextBox();
             rentaldgv = new DataGridView();
+            rentMachinePictureBox = new PictureBox();
+            label10 = new Label();
+            rentIDtxtbx = new TextBox();
             ((System.ComponentModel.ISupportInitialize)rentaldgv).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)rentMachinePictureBox).BeginInit();
             SuspendLayout();
             // 
             // startRentdtp
             // 
-            startRentdtp.Location = new Point(588, 512);
+            startRentdtp.Location = new Point(588, 540);
             startRentdtp.Name = "startRentdtp";
             startRentdtp.Size = new Size(413, 27);
             startRentdtp.TabIndex = 22;
@@ -61,7 +65,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(30, 514);
+            label2.Location = new Point(30, 547);
             label2.Name = "label2";
             label2.Size = new Size(122, 20);
             label2.TabIndex = 17;
@@ -70,7 +74,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 481);
+            label1.Location = new Point(30, 514);
             label1.Name = "label1";
             label1.Size = new Size(97, 20);
             label1.TabIndex = 16;
@@ -78,21 +82,21 @@
             // 
             // EmployNamRenttxtbx
             // 
-            EmployNamRenttxtbx.Location = new Point(152, 511);
+            EmployNamRenttxtbx.Location = new Point(152, 544);
             EmployNamRenttxtbx.Name = "EmployNamRenttxtbx";
             EmployNamRenttxtbx.Size = new Size(246, 27);
             EmployNamRenttxtbx.TabIndex = 15;
             // 
             // EmpIDRenttxtbx
             // 
-            EmpIDRenttxtbx.Location = new Point(152, 478);
+            EmpIDRenttxtbx.Location = new Point(152, 511);
             EmpIDRenttxtbx.Name = "EmpIDRenttxtbx";
             EmpIDRenttxtbx.Size = new Size(246, 27);
             EmpIDRenttxtbx.TabIndex = 14;
             // 
             // endRentdtp
             // 
-            endRentdtp.Location = new Point(588, 549);
+            endRentdtp.Location = new Point(588, 577);
             endRentdtp.Name = "endRentdtp";
             endRentdtp.Size = new Size(413, 27);
             endRentdtp.TabIndex = 23;
@@ -100,7 +104,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(30, 579);
+            label4.Location = new Point(30, 612);
             label4.Name = "label4";
             label4.Size = new Size(111, 20);
             label4.TabIndex = 25;
@@ -108,7 +112,7 @@
             // 
             // RenterPhonetxtbx
             // 
-            RenterPhonetxtbx.Location = new Point(152, 577);
+            RenterPhonetxtbx.Location = new Point(152, 610);
             RenterPhonetxtbx.Name = "RenterPhonetxtbx";
             RenterPhonetxtbx.Size = new Size(246, 27);
             RenterPhonetxtbx.TabIndex = 24;
@@ -116,7 +120,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(30, 612);
+            label5.Location = new Point(30, 645);
             label5.Name = "label5";
             label5.Size = new Size(86, 20);
             label5.TabIndex = 27;
@@ -124,14 +128,14 @@
             // 
             // RentVenuetxtbx
             // 
-            RentVenuetxtbx.Location = new Point(152, 610);
+            RentVenuetxtbx.Location = new Point(152, 643);
             RentVenuetxtbx.Name = "RentVenuetxtbx";
             RentVenuetxtbx.Size = new Size(246, 27);
             RentVenuetxtbx.TabIndex = 26;
             // 
             // RenterNamtxtbx
             // 
-            RenterNamtxtbx.Location = new Point(152, 544);
+            RenterNamtxtbx.Location = new Point(152, 577);
             RenterNamtxtbx.Name = "RenterNamtxtbx";
             RenterNamtxtbx.Size = new Size(246, 27);
             RenterNamtxtbx.TabIndex = 18;
@@ -139,7 +143,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(30, 546);
+            label6.Location = new Point(30, 579);
             label6.Name = "label6";
             label6.Size = new Size(99, 20);
             label6.TabIndex = 19;
@@ -148,7 +152,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(447, 514);
+            label3.Location = new Point(447, 542);
             label3.Name = "label3";
             label3.Size = new Size(78, 20);
             label3.TabIndex = 28;
@@ -157,7 +161,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(447, 551);
+            label7.Location = new Point(447, 579);
             label7.Name = "label7";
             label7.Size = new Size(91, 20);
             label7.TabIndex = 29;
@@ -187,52 +191,82 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(447, 481);
+            label8.Location = new Point(447, 474);
             label8.Name = "label8";
             label8.Size = new Size(138, 20);
             label8.TabIndex = 32;
             label8.Text = "Rental Event Name:";
             // 
-            // textBox1
+            // EventNametxtbx
             // 
-            textBox1.Location = new Point(588, 479);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(413, 27);
-            textBox1.TabIndex = 31;
+            EventNametxtbx.Location = new Point(588, 472);
+            EventNametxtbx.Name = "EventNametxtbx";
+            EventNametxtbx.Size = new Size(413, 27);
+            EventNametxtbx.TabIndex = 31;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(30, 645);
+            label9.Location = new Point(447, 510);
             label9.Name = "label9";
             label9.Size = new Size(116, 20);
             label9.TabIndex = 34;
             label9.Text = "Arcade Machine";
             // 
-            // RentMachine
+            // RentMachinetxtbx
             // 
-            RentMachine.Location = new Point(152, 643);
-            RentMachine.Name = "RentMachine";
-            RentMachine.Size = new Size(246, 27);
-            RentMachine.TabIndex = 33;
+            RentMachinetxtbx.Location = new Point(588, 507);
+            RentMachinetxtbx.Name = "RentMachinetxtbx";
+            RentMachinetxtbx.Size = new Size(413, 27);
+            RentMachinetxtbx.TabIndex = 33;
             // 
             // rentaldgv
             // 
+            rentaldgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             rentaldgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             rentaldgv.Location = new Point(30, 30);
             rentaldgv.Name = "rentaldgv";
             rentaldgv.RowHeadersWidth = 51;
-            rentaldgv.Size = new Size(971, 432);
+            rentaldgv.Size = new Size(687, 432);
             rentaldgv.TabIndex = 13;
+            rentaldgv.CellClick += rentaldgv_CellClick;
+            // 
+            // rentMachinePictureBox
+            // 
+            rentMachinePictureBox.Location = new Point(723, 30);
+            rentMachinePictureBox.Name = "rentMachinePictureBox";
+            rentMachinePictureBox.Size = new Size(278, 432);
+            rentMachinePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            rentMachinePictureBox.TabIndex = 39;
+            rentMachinePictureBox.TabStop = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(30, 479);
+            label10.Name = "label10";
+            label10.Size = new Size(61, 20);
+            label10.TabIndex = 41;
+            label10.Text = "Rent ID:";
+            // 
+            // rentIDtxtbx
+            // 
+            rentIDtxtbx.Location = new Point(152, 477);
+            rentIDtxtbx.Name = "rentIDtxtbx";
+            rentIDtxtbx.Size = new Size(246, 27);
+            rentIDtxtbx.TabIndex = 40;
             // 
             // RentalControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label10);
+            Controls.Add(rentIDtxtbx);
+            Controls.Add(rentMachinePictureBox);
             Controls.Add(label9);
-            Controls.Add(RentMachine);
+            Controls.Add(RentMachinetxtbx);
             Controls.Add(label8);
-            Controls.Add(textBox1);
+            Controls.Add(EventNametxtbx);
             Controls.Add(RentPayTransactbtn);
             Controls.Add(label7);
             Controls.Add(label3);
@@ -253,6 +287,7 @@
             Size = new Size(1080, 665);
             Load += RentalControl_Load;
             ((System.ComponentModel.ISupportInitialize)rentaldgv).EndInit();
+            ((System.ComponentModel.ISupportInitialize)rentMachinePictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -275,10 +310,13 @@
         private Label label7;
         private MaterialSkin.Controls.MaterialButton RentPayTransactbtn;
         private Label label8;
-        private TextBox textBox1;
+        private TextBox EventNametxtbx;
         private Label label9;
-        private TextBox RentMachine;
+        private TextBox RentMachinetxtbx;
         private DataGridView rentaldgv;
         private DataGridView Machinedgv;
+        private PictureBox rentMachinePictureBox;
+        private Label label10;
+        private TextBox rentIDtxtbx;
     }
 }
