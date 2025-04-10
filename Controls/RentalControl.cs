@@ -28,5 +28,10 @@ namespace ArcadeSync_Project.Controls
             rentaldgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
             rentaldgv.EnableHeadersVisualStyles = false;
         }
+
+        private void RentPayTransactbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

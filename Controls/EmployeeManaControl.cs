@@ -74,22 +74,22 @@ namespace ArcadeSync_Project
             conn = new OleDbConnection(connStr);
             conn.Open();
 
-            string validateQuery = "SELECT COUNT(*) FROM Employee WHERE EmployeeID = ? AND FullName = ? AND Password = ?";
+            string validateQuery = "SELECT COUNT(*) FROM Employee WHERE EmployeeID = @id AND FullName = @fullname AND [Password] = @password";
             cmd = new OleDbCommand(validateQuery, conn);
-            cmd.Parameters.AddWithValue("?", id);
-            cmd.Parameters.AddWithValue("?", fullName);
-            cmd.Parameters.AddWithValue("?", password);
+            cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+            cmd.Parameters.Add("@fullname", OleDbType.VarWChar).Value = fullName;
+            cmd.Parameters.Add("@password", OleDbType.VarWChar).Value = password;
 
             int match = (int)cmd.ExecuteScalar();
 
             if (match > 0)
             {
-                string insertTimeIn = "INSERT INTO AttendanceLogs (EmployeeID, FullName, TimeIn, DateShift) VALUES (?, ?, ?, ?)";
+                string insertTimeIn = "INSERT INTO AttendanceLogs (EmployeeID, FullName, TimeIn, DateShift) VALUES (@id, @fullname, @timein, @dateshift)";
                 cmd = new OleDbCommand(insertTimeIn, conn);
-                cmd.Parameters.Add("?", OleDbType.VarWChar).Value = id;
-                cmd.Parameters.Add("?", OleDbType.VarWChar).Value = fullName;
-                cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now;  
-                cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now.Date;
+                cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+                cmd.Parameters.Add("@fullname", OleDbType.VarWChar).Value = fullName;
+                cmd.Parameters.Add("@timein", OleDbType.Date).Value = DateTime.Now;
+                cmd.Parameters.Add("@dateshift", OleDbType.Date).Value = DateTime.Now.Date;
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Time In successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -118,21 +118,21 @@ namespace ArcadeSync_Project
             conn = new OleDbConnection(connStr);
             conn.Open();
 
-            string validateQuery = "SELECT COUNT(*) FROM Employee WHERE EmployeeID = ? AND FullName = ? AND Password = ?";
+            string validateQuery = "SELECT COUNT(*) FROM Employee WHERE EmployeeID = @id AND FullName = @fullname AND [Password] = @password";
             cmd = new OleDbCommand(validateQuery, conn);
-            cmd.Parameters.AddWithValue("?", id);
-            cmd.Parameters.AddWithValue("?", fullName);
-            cmd.Parameters.AddWithValue("?", password);
+            cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+            cmd.Parameters.Add("@fullname", OleDbType.VarWChar).Value = fullName;
+            cmd.Parameters.Add("@password", OleDbType.VarWChar).Value = password;
 
             int match = (int)cmd.ExecuteScalar();
 
             if (match > 0)
             {
-                string updateTimeOut = "UPDATE AttendanceLogs SET TimeOut = ? WHERE EmployeeID = ? AND DateShift = ? AND TimeOut IS NULL";
+                string updateTimeOut = "UPDATE AttendanceLogs SET TimeOut = @timeout WHERE EmployeeID = @id AND DateShift = @dateshift AND TimeOut IS NULL";
                 cmd = new OleDbCommand(updateTimeOut, conn);
-                cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now;
-                cmd.Parameters.Add("?", OleDbType.VarWChar).Value = id;
-                cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now.Date;
+                cmd.Parameters.Add("@timeout", OleDbType.Date).Value = DateTime.Now;
+                cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+                cmd.Parameters.Add("@dateshift", OleDbType.Date).Value = DateTime.Now.Date;
 
                 int affected = cmd.ExecuteNonQuery();
 

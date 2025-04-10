@@ -43,7 +43,7 @@ namespace ArcadeSync_Project.Controls
         private void LoadInventoryData()
         {
             myConn = new OleDbConnection(connStr);
-            da = new OleDbDataAdapter("SELECT * FROM ArcadeInventory", myConn);
+            da = new OleDbDataAdapter("SELECT MachineID, MachineName, Status, Location FROM ArcadeInventory", myConn);
             ds = new DataSet();
             myConn.Open();
             da.Fill(ds, "ArcadeInventory");
@@ -53,31 +53,103 @@ namespace ArcadeSync_Project.Controls
 
         private void addMachbtn_Click(object sender, EventArgs e)
         {
+            string id = machIDtxtbx.Text.Trim();
+            string name = machNametxtbx.Text.Trim();
+            string status = statuscmbbx.Text.Trim();
+            string location = locationtxtbx.Text.Trim();
+
+            if (id == "" || name == "" || status == "" || location == "")
+            {
+                MessageBox.Show("All fields must be filled.", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             myConn = new OleDbConnection(connStr);
-            string query = "INSERT INTO ArcadeInventory (MachineID, MachineName, Status, Location) VALUES (@id, @name, @status, @location)";
-            cmd = new OleDbCommand(query, myConn);
-            cmd.Parameters.AddWithValue("@id", machIDtxtbx.Text);
-            cmd.Parameters.AddWithValue("@name", machNametxtbx.Text);
-            cmd.Parameters.AddWithValue("@status", statuscmbbx.Text);
-            cmd.Parameters.AddWithValue("@location", locationtxtbx.Text);
+            string insertQuery = "INSERT INTO ArcadeInventory (MachineID, MachineName, Status, Location, ArcadeImage) VALUES (@id, @name, @status, @location, @image)";
+            cmd = new OleDbCommand(insertQuery, myConn);
+
+            cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+            cmd.Parameters.Add("@name", OleDbType.VarWChar).Value = name;
+            cmd.Parameters.Add("@status", OleDbType.VarWChar).Value = status;
+            cmd.Parameters.Add("@location", OleDbType.VarWChar).Value = location;
+
+            byte[] imgData;
+            if (machinePictureBox.Image != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    machinePictureBox.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    imgData = ms.ToArray();
+                }
+            }
+            else
+            {
+                imgData = new byte[0];
+            }
+
+            cmd.Parameters.Add("@image", OleDbType.Binary).Value = imgData;
+
             myConn.Open();
             cmd.ExecuteNonQuery();
             myConn.Close();
+
+            MessageBox.Show("Machine added successfully.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadInventoryData();
         }
 
         private void updateMachbtn_Click(object sender, EventArgs e)
         {
+            if (indexRow < 0)
+            {
+                MessageBox.Show("Please select a machine to update.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string id = machIDtxtbx.Text.Trim();
+            string name = machNametxtbx.Text.Trim();
+            string status = statuscmbbx.Text.Trim();
+            string location = locationtxtbx.Text.Trim();
+
+            if (id == "" || name == "" || status == "" || location == "")
+            {
+                MessageBox.Show("All fields must be filled.", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             myConn = new OleDbConnection(connStr);
-            string query = "UPDATE ArcadeInventory SET MachineName = @name, Status = @status, Location = @location WHERE MachineID = @id";
-            cmd = new OleDbCommand(query, myConn);
-            cmd.Parameters.AddWithValue("@name", machNametxtbx.Text);
-            cmd.Parameters.AddWithValue("@status", statuscmbbx.Text);
-            cmd.Parameters.AddWithValue("@location", locationtxtbx.Text);
-            cmd.Parameters.AddWithValue("@id", machIDtxtbx.Text);
+            string updateQuery = "UPDATE ArcadeInventory SET MachineName = @name, Status = @status, Location = @location, ArcadeImage = @image WHERE MachineID = @id";
+            cmd = new OleDbCommand(updateQuery, myConn);
+
+            cmd.Parameters.Add("@name", OleDbType.VarWChar).Value = name;
+            cmd.Parameters.Add("@status", OleDbType.VarWChar).Value = status;
+            cmd.Parameters.Add("@location", OleDbType.VarWChar).Value = location;
+
+            byte[] imgData;
+            if (machinePictureBox.Image != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (Bitmap clone = new Bitmap(machinePictureBox.Image))
+                    {
+                        clone.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
+                    imgData = ms.ToArray();
+                }
+            }
+            else
+            {
+                imgData = new byte[0];
+            }
+
+
+            cmd.Parameters.Add("@image", OleDbType.Binary).Value = imgData;
+            cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+
             myConn.Open();
             cmd.ExecuteNonQuery();
             myConn.Close();
+
+            MessageBox.Show("Machine record updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadInventoryData();
         }
 
@@ -96,11 +168,49 @@ namespace ArcadeSync_Project.Controls
         private void inventorydgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
+            if (indexRow < 0 || inventorydgv.Rows[indexRow].IsNewRow) return;
+
             DataGridViewRow row = inventorydgv.Rows[indexRow];
-            machIDtxtbx.Text = row.Cells["MachineID"].Value.ToString();
+
+            string id = row.Cells["MachineID"].Value.ToString();
+            machIDtxtbx.Text = id;
             machNametxtbx.Text = row.Cells["MachineName"].Value.ToString();
-            statuscmbbx.SelectedItem = row.Cells["Status"].Value.ToString();
+            statuscmbbx.Text = row.Cells["Status"].Value.ToString();
             locationtxtbx.Text = row.Cells["Location"].Value.ToString();
+
+            // Retrieve image separately
+            myConn = new OleDbConnection(connStr);
+            string query = "SELECT ArcadeImage FROM ArcadeInventory WHERE MachineID = @id";
+            cmd = new OleDbCommand(query, myConn);
+            cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+
+            myConn.Open();
+            object result = cmd.ExecuteScalar();
+            myConn.Close();
+
+            if (result != DBNull.Value && result != null)
+            {
+                byte[] imgData = (byte[])result;
+                using (MemoryStream ms = new MemoryStream(imgData))
+                {
+                    machinePictureBox.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                machinePictureBox.Image = null;
+            }
+        }
+
+        private void insertArcPicbtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                machinePictureBox.Image = Image.FromFile(open.FileName);
+                machinePictureBox.Tag = open.FileName; 
+            }
         }
     }
 }

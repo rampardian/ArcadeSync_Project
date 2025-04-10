@@ -71,6 +71,13 @@ namespace ArcadeSync_Project.Controls
                 return;
             }
 
+            if (start < DateTime.Now)
+            {
+                MessageBox.Show("Start of shift cannot be in the past.", "Invalid Shift Time", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
             if (end <= start)
             {
                 MessageBox.Show("Ending shift must be after starting shift.", "Invalid Schedule", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -80,13 +87,13 @@ namespace ArcadeSync_Project.Controls
             conn = new OleDbConnection(connStr);
             conn.Open();
 
-            string insertQuery = "INSERT INTO ShiftSched (EmployeeID, FullName, Role, ShiftStart, ShiftEnd) VALUES (?, ?, ?, ?, ?)";
+            string insertQuery = "INSERT INTO ShiftSched (EmployeeID, FullName, Role, ShiftStart, ShiftEnd) VALUES (@id, @fullname, @role, @start, @end)";
             cmd = new OleDbCommand(insertQuery, conn);
-            cmd.Parameters.Add("?", OleDbType.VarWChar).Value = id;
-            cmd.Parameters.Add("?", OleDbType.VarWChar).Value = fullName;
-            cmd.Parameters.Add("?", OleDbType.VarWChar).Value = role;
-            cmd.Parameters.Add("?", OleDbType.Date).Value = start;
-            cmd.Parameters.Add("?", OleDbType.Date).Value = end;
+            cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+            cmd.Parameters.Add("@fullname", OleDbType.VarWChar).Value = fullName;
+            cmd.Parameters.Add("@role", OleDbType.VarWChar).Value = role;
+            cmd.Parameters.Add("@start", OleDbType.Date).Value = start;
+            cmd.Parameters.Add("@end", OleDbType.Date).Value = end;
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -125,9 +132,9 @@ namespace ArcadeSync_Project.Controls
                 conn = new OleDbConnection(connStr);
                 conn.Open();
 
-                string deleteQuery = "DELETE FROM ShiftSched WHERE ScheduleID = ?";
+                string deleteQuery = "DELETE FROM ShiftSched WHERE ScheduleID = @schedID";
                 cmd = new OleDbCommand(deleteQuery, conn);
-                cmd.Parameters.Add("?", OleDbType.Integer).Value = selectedScheduleID;
+                cmd.Parameters.Add("@schedID", OleDbType.Integer).Value = selectedScheduleID;
 
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -161,14 +168,14 @@ namespace ArcadeSync_Project.Controls
             conn = new OleDbConnection(connStr);
             conn.Open();
 
-            string updateQuery = "UPDATE ShiftSched SET EmployeeID = ?, FullName = ?, Role = ?, ShiftStart = ?, ShiftEnd = ? WHERE ScheduleID = ?";
+            string updateQuery = "UPDATE ShiftSched SET EmployeeID = @id, FullName = @fullname, Role = @role, ShiftStart = @start, ShiftEnd = @end WHERE ScheduleID = @schedID";
             cmd = new OleDbCommand(updateQuery, conn);
-            cmd.Parameters.Add("?", OleDbType.VarWChar).Value = id;
-            cmd.Parameters.Add("?", OleDbType.VarWChar).Value = fullName;
-            cmd.Parameters.Add("?", OleDbType.VarWChar).Value = role;
-            cmd.Parameters.Add("?", OleDbType.Date).Value = start;
-            cmd.Parameters.Add("?", OleDbType.Date).Value = end;
-            cmd.Parameters.Add("?", OleDbType.Integer).Value = selectedScheduleID;
+            cmd.Parameters.Add("@id", OleDbType.VarWChar).Value = id;
+            cmd.Parameters.Add("@fullname", OleDbType.VarWChar).Value = fullName;
+            cmd.Parameters.Add("@role", OleDbType.VarWChar).Value = role;
+            cmd.Parameters.Add("@start", OleDbType.Date).Value = start;
+            cmd.Parameters.Add("@end", OleDbType.Date).Value = end;
+            cmd.Parameters.Add("@schedID", OleDbType.Integer).Value = selectedScheduleID;
 
             cmd.ExecuteNonQuery();
             conn.Close();

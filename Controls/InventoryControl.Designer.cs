@@ -43,7 +43,11 @@
             materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
             label6 = new Label();
             searchMachbtn = new MaterialSkin.Controls.MaterialButton();
+            label5 = new Label();
+            insertArcPicbtn = new MaterialSkin.Controls.MaterialButton();
+            machinePictureBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)inventorydgv).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)machinePictureBox).BeginInit();
             SuspendLayout();
             // 
             // label3
@@ -80,7 +84,7 @@
             inventorydgv.Location = new Point(30, 30);
             inventorydgv.Name = "inventorydgv";
             inventorydgv.RowHeadersWidth = 51;
-            inventorydgv.Size = new Size(971, 380);
+            inventorydgv.Size = new Size(687, 380);
             inventorydgv.TabIndex = 13;
             inventorydgv.CellClick += inventorydgv_CellClick;
             // 
@@ -276,10 +280,52 @@
             searchMachbtn.UseAccentColor = false;
             searchMachbtn.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(561, 497);
+            label5.Name = "label5";
+            label5.Size = new Size(57, 20);
+            label5.TabIndex = 36;
+            label5.Text = "Picture:";
+            // 
+            // insertArcPicbtn
+            // 
+            insertArcPicbtn.AutoSize = false;
+            insertArcPicbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            insertArcPicbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            insertArcPicbtn.Depth = 0;
+            insertArcPicbtn.HighEmphasis = true;
+            insertArcPicbtn.Icon = null;
+            insertArcPicbtn.Location = new Point(677, 489);
+            insertArcPicbtn.Margin = new Padding(4, 6, 4, 6);
+            insertArcPicbtn.MouseState = MaterialSkin.MouseState.HOVER;
+            insertArcPicbtn.Name = "insertArcPicbtn";
+            insertArcPicbtn.NoAccentTextColor = Color.Empty;
+            insertArcPicbtn.Size = new Size(324, 36);
+            insertArcPicbtn.TabIndex = 37;
+            insertArcPicbtn.Text = "Insert Image";
+            insertArcPicbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            insertArcPicbtn.UseAccentColor = false;
+            insertArcPicbtn.UseVisualStyleBackColor = true;
+            insertArcPicbtn.Click += insertArcPicbtn_Click;
+            // 
+            // machinePictureBox
+            // 
+            machinePictureBox.Location = new Point(723, 30);
+            machinePictureBox.Name = "machinePictureBox";
+            machinePictureBox.Size = new Size(278, 380);
+            machinePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            machinePictureBox.TabIndex = 38;
+            machinePictureBox.TabStop = false;
+            // 
             // InventoryControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(machinePictureBox);
+            Controls.Add(insertArcPicbtn);
+            Controls.Add(label5);
             Controls.Add(searchMachbtn);
             Controls.Add(materialTextBox2);
             Controls.Add(label6);
@@ -299,6 +345,7 @@
             Size = new Size(1080, 665);
             Load += InventoryControl_Load;
             ((System.ComponentModel.ISupportInitialize)inventorydgv).EndInit();
+            ((System.ComponentModel.ISupportInitialize)machinePictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -319,5 +366,8 @@
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private Label label6;
         private MaterialSkin.Controls.MaterialButton searchMachbtn;
+        private Label label5;
+        private MaterialSkin.Controls.MaterialButton insertArcPicbtn;
+        private PictureBox machinePictureBox;
     }
 }
