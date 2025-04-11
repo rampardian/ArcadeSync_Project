@@ -1,118 +1,114 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ArcadeSync_Project.Properties.Resources">
-    <Position X="3" Y="7.25" Width="1.5" />
+    <Position X="2.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAAAAABEAAAAQQAAABAAAACAAAAAIA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAIAAAAABEAAAAQQAAABEAAACAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.ArcadeForm">
-    <Position X="8.25" Y="1.5" Width="1.5" />
+    <Position X="8" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ArcadeForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Login">
-    <Position X="10" Y="1.5" Width="1.5" />
+    <Position X="9.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAABAAAACAAAACAAwQAAAAAAAAAABAASA=</HashCode>
-      <FileName>Login.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.MainMenu">
-    <Position X="3" Y="1.5" Width="1.5" />
+    <Position X="2.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAQQACAAAAQAAzCAAAAGBAAAIAAKAAggEgABAAA=</HashCode>
-      <FileName>MainMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Program">
-    <Position X="4.75" Y="1.5" Width="1.5" />
+    <Position X="4.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.EmployeeManaControl">
-    <Position X="6.5" Y="1.5" Width="1.5" />
+    <Position X="6.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAASAAABgAAACIAAACAAAAAAAAAAAAARJLAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.ActualDayControl">
-    <Position X="11.75" Y="6" Width="1.5" />
+    <Position X="11.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAACAAAAKAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controls\ActualDayControl.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ArcadeSync_Project.Controls.AddLogReport">
-    <Position X="13.5" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controls\AddLogReport.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.AnalyticsControl">
-    <Position X="15.25" Y="1.5" Width="1.5" />
+    <Position X="15" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAABCAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controls\AnalyticsControl.cs</FileName>
+      <HashCode>AgAAAAAAACAAABCCAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.BlankDayControl">
-    <Position X="10" Y="6" Width="1.5" />
+    <Position X="9.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAQAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.CalendarControl">
-    <Position X="11.75" Y="1.5" Width="1.5" />
+    <Position X="11.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAARAAAACAAAACAAAAAEAgABAAAAAAAgA=</HashCode>
-      <FileName>Controls\CalendarControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.InventoryControl">
-    <Position X="17" Y="1.5" Width="1.5" />
+    <Position X="16.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAACAAAJAAAACAAAACAAAQAAAAgAAABCCBABA=</HashCode>
-      <FileName>Controls\InventoryControl.cs</FileName>
+      <HashCode>AAAAAABAACAAAJAAAACAAQACAIAQAAAAgAAABCCBABA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.LayoutControl">
-    <Position X="13.5" Y="3.75" Width="1.5" />
+    <Position X="13.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIhAAACAAAwAAAACAQAACAAAAAAAAQAAgIABAAAA=</HashCode>
+      <HashCode>AAA0AAAAACAAAgAAAACAAMACAAAAAGABAAAAIABAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.RegistryControl">
-    <Position X="15.25" Y="4.25" Width="1.5" />
+    <Position X="15" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAIAAADAAAJAAEACAAAAiAABAAAgAAACAAABACAA=</HashCode>
-      <FileName>Controls\RegistryControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.RentalControl">
-    <Position X="18.75" Y="1.5" Width="1.5" />
+    <Position X="18.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAEQAAQCgAAJAAAACAAAACQAAAAAAAEQAAAgAAAAA=</HashCode>
-      <FileName>Controls\RentalControl.cs</FileName>
+      <HashCode>EIAgEQAAQCgAAJQAAQCABAACAEAAAAAAAQAAAgAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.ShiftSchedControl">
-    <Position X="20.5" Y="1.5" Width="1.5" />
+    <Position X="20.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACgAAABBACAAQRQAAACAAAAGAEQAAIAAhAgDKBACAAA=</HashCode>
-      <FileName>Controls\ShiftSchedControl.cs</FileName>
+      <HashCode>AAgAAAABACAAQRAAAACAAAACAAAAAAAAhAgBCBAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.RentTransaction">
-    <Position X="18.75" Y="7.25" Width="1.5" />
+    <Position X="13.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controls\RentTransaction.cs</FileName>
+      <HashCode>BAUAAQAAACAAABAEAACAAAACAAAAAAABACAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArcadeSync_Project.Controls.AnalyticsDataForm">
+    <Position X="6.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQAGACABAAACCAAFAGAAAAAIgEBAAAEIgAAAA=</HashCode>
+      <FileName>Controls\AnalyticsDataForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArcadeSync_Project.Controls.CalendarLogReportForm">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAAAASAAABgAAACAAAACIAAAAAAIAAAAABAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
