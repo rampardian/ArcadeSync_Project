@@ -89,7 +89,6 @@ namespace ArcadeSync_Project.Controls
                 plt.Add.Scatter(xs, ys);
                 plt.Axes.DateTimeTicksBottom();
 
-                // Set Y limits only, but preserve X range
                 double xMin = xs.Min();
                 double xMax = xs.Max();
                 double yMin = 0;

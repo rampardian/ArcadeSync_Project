@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ArcadeSync_Project.Properties.Resources">
-    <Position X="2.75" Y="7.25" Width="1.5" />
+    <Position X="4.5" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAABEAAAAQQAAABEAAACAAAAAIA=</HashCode>
     </TypeIdentifier>
@@ -15,14 +18,21 @@
   </Class>
   <Class Name="ArcadeSync_Project.Login">
     <Position X="9.75" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAABAAAACAAAACAAwQAAAAAAAAAABAASA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.MainMenu">
     <Position X="2.75" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAEAQQACAAAAQAAzCAAAAGBAAAIAAKAAggEgABAAA=</HashCode>
+      <HashCode>AAAAEAQQACAAACQAAzCAAAAGBAAAIAAKAAggEgABAAA=</HashCode>
+      <FileName>MainMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Program">
@@ -34,30 +44,47 @@
   </Class>
   <Class Name="ArcadeSync_Project.EmployeeManaControl">
     <Position X="6.25" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAASAAABgAAACIAAACAAAAAAAAAAAAARJLAAA=</HashCode>
+      <HashCode>AAQBAAAAASCAABwAAACIAAACAAQAIIAAAAACERJLAAA=</HashCode>
+      <FileName>Controls\EmployeeManaControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.ActualDayControl">
     <Position X="11.5" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAACAAAAKAAAQAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.AnalyticsControl">
     <Position X="15" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AgAAAAAAACAAABCCAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAACAAABCCAACABAACAAAIAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\AnalyticsControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.BlankDayControl">
     <Position X="9.75" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAQAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.CalendarControl">
     <Position X="11.5" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAARAAAACAAAACAAAAAEAgABAAAAAAAgA=</HashCode>
     </TypeIdentifier>
@@ -70,14 +97,21 @@
   </Class>
   <Class Name="ArcadeSync_Project.Controls.LayoutControl">
     <Position X="13.25" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAA0AAAAACAAAgAAAACAAMACAAAAAGABAAAAIABAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.RegistryControl">
     <Position X="15" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAACAIAAADAAAJAAEACAAAAiAABAAAgAAACAAABACAA=</HashCode>
+      <HashCode>AAACAIAAADAACJQIEACAAAAiAERAAIgAAgDCAABQCAA=</HashCode>
+      <FileName>Controls\RegistryControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.RentalControl">
@@ -89,17 +123,25 @@
   <Class Name="ArcadeSync_Project.Controls.ShiftSchedControl">
     <Position X="20.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAABACAAQRAAAACAAAACAAAAAAAAhAgBCBAAAAA=</HashCode>
+      <HashCode>ACgAAABBACAAQRQAAACAAAAGAEQAAIAAhAgDKBACAAA=</HashCode>
+      <FileName>Controls\ShiftSchedControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.RentTransaction">
     <Position X="13.25" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>BAUAAQAAACAAABAEAACAAAACAAAAAAABACAACAAAAAA=</HashCode>
+      <HashCode>hAUAJQAACCgAABCEFACAAAACABAKAoCBACgACIAAAAg=</HashCode>
+      <FileName>Controls\RentTransaction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ArcadeSync_Project.Controls.AnalyticsDataForm">
     <Position X="6.25" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAEAQAGACABAAACCAAFAGAAAAAIgEBAAAEIgAAAA=</HashCode>
       <FileName>Controls\AnalyticsDataForm.cs</FileName>
@@ -107,6 +149,9 @@
   </Class>
   <Class Name="ArcadeSync_Project.Controls.CalendarLogReportForm">
     <Position X="8" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AIAAgAAAASAAABgAAACAAAACIAAAAAAIAAAAABAAAAA=</HashCode>
     </TypeIdentifier>
