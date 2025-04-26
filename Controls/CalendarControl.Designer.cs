@@ -38,7 +38,6 @@
             label7 = new Label();
             prevMonthbtn = new MaterialSkin.Controls.MaterialButton();
             nextMonthbtn = new MaterialSkin.Controls.MaterialButton();
-            Reportbtn = new MaterialSkin.Controls.MaterialButton();
             monthYearlabel = new Label();
             SuspendLayout();
             // 
@@ -154,26 +153,6 @@
             nextMonthbtn.UseVisualStyleBackColor = true;
             nextMonthbtn.Click += nextMonthbtn_Click;
             // 
-            // Reportbtn
-            // 
-            Reportbtn.AutoSize = false;
-            Reportbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Reportbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            Reportbtn.Depth = 0;
-            Reportbtn.HighEmphasis = true;
-            Reportbtn.Icon = null;
-            Reportbtn.Location = new Point(30, 21);
-            Reportbtn.Margin = new Padding(4, 6, 4, 6);
-            Reportbtn.MouseState = MaterialSkin.MouseState.HOVER;
-            Reportbtn.Name = "Reportbtn";
-            Reportbtn.NoAccentTextColor = Color.Empty;
-            Reportbtn.Size = new Size(138, 36);
-            Reportbtn.TabIndex = 19;
-            Reportbtn.Text = "Add Log Report";
-            Reportbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            Reportbtn.UseAccentColor = false;
-            Reportbtn.UseVisualStyleBackColor = true;
-            // 
             // monthYearlabel
             // 
             monthYearlabel.AutoSize = true;
@@ -191,7 +170,6 @@
             Controls.Add(monthYearlabel);
             Controls.Add(prevMonthbtn);
             Controls.Add(nextMonthbtn);
-            Controls.Add(Reportbtn);
             Controls.Add(label7);
             Controls.Add(label5);
             Controls.Add(label6);
@@ -219,7 +197,6 @@
         private Label label7;
         private MaterialSkin.Controls.MaterialButton prevMonthbtn;
         private MaterialSkin.Controls.MaterialButton nextMonthbtn;
-        private MaterialSkin.Controls.MaterialButton Reportbtn;
         private Label monthYearlabel;
     }
 }
