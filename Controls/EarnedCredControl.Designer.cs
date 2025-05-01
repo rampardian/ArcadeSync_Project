@@ -35,16 +35,14 @@
             dataRangecmbbx = new ComboBox();
             label3 = new Label();
             TotalEarnedgv = new DataGridView();
-            label2 = new Label();
             label4 = new Label();
-            DaysRentedPlot = new ScottPlot.WinForms.FormsPlot();
             ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 590);
+            label1.Location = new Point(550, 455);
             label1.Name = "label1";
             label1.Size = new Size(100, 20);
             label1.TabIndex = 3;
@@ -52,7 +50,7 @@
             // 
             // StartEarndtp
             // 
-            StartEarndtp.Location = new Point(30, 614);
+            StartEarndtp.Location = new Point(550, 479);
             StartEarndtp.Name = "StartEarndtp";
             StartEarndtp.Size = new Size(250, 27);
             StartEarndtp.TabIndex = 2;
@@ -73,7 +71,7 @@
             showDatabtn.Depth = 0;
             showDatabtn.HighEmphasis = true;
             showDatabtn.Icon = null;
-            showDatabtn.Location = new Point(857, 608);
+            showDatabtn.Location = new Point(869, 553);
             showDatabtn.Margin = new Padding(4, 6, 4, 6);
             showDatabtn.MouseState = MaterialSkin.MouseState.HOVER;
             showDatabtn.Name = "showDatabtn";
@@ -90,7 +88,7 @@
             // 
             dataRangecmbbx.FormattingEnabled = true;
             dataRangecmbbx.Items.AddRange(new object[] { "Weekly", "Montly", "Yearly" });
-            dataRangecmbbx.Location = new Point(286, 613);
+            dataRangecmbbx.Location = new Point(550, 558);
             dataRangecmbbx.Name = "dataRangecmbbx";
             dataRangecmbbx.Size = new Size(250, 28);
             dataRangecmbbx.TabIndex = 42;
@@ -98,7 +96,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(286, 590);
+            label3.Location = new Point(550, 535);
             label3.Name = "label3";
             label3.Size = new Size(90, 20);
             label3.TabIndex = 43;
@@ -107,45 +105,26 @@
             // TotalEarnedgv
             // 
             TotalEarnedgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TotalEarnedgv.Location = new Point(544, 357);
+            TotalEarnedgv.Location = new Point(30, 373);
             TotalEarnedgv.Name = "TotalEarnedgv";
             TotalEarnedgv.RowHeadersWidth = 51;
             TotalEarnedgv.Size = new Size(463, 216);
             TotalEarnedgv.TabIndex = 44;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(30, 334);
-            label2.Name = "label2";
-            label2.Size = new Size(287, 20);
-            label2.TabIndex = 45;
-            label2.Text = "Shares of Credits per Machine: (Pie Graph)";
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(544, 334);
+            label4.Location = new Point(30, 350);
             label4.Name = "label4";
             label4.Size = new Size(302, 20);
             label4.TabIndex = 46;
             label4.Text = "Total Earned Credits (based on Data Range):";
             // 
-            // DaysRentedPlot
-            // 
-            DaysRentedPlot.DisplayScale = 1.25F;
-            DaysRentedPlot.Location = new Point(30, 357);
-            DaysRentedPlot.Name = "DaysRentedPlot";
-            DaysRentedPlot.Size = new Size(503, 216);
-            DaysRentedPlot.TabIndex = 58;
-            // 
             // EarnedCredControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(DaysRentedPlot);
             Controls.Add(label4);
-            Controls.Add(label2);
             Controls.Add(TotalEarnedgv);
             Controls.Add(label3);
             Controls.Add(dataRangecmbbx);
@@ -169,8 +148,6 @@
         private ComboBox dataRangecmbbx;
         private Label label3;
         private DataGridView TotalEarnedgv;
-        private Label label2;
         private Label label4;
-        private ScottPlot.WinForms.FormsPlot DaysRentedPlot;
     }
 }

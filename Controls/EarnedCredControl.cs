@@ -8,10 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ScottPlot;
-using ScottPlot.WinForms;
-using ScottPlot.TickGenerators;
-using ScottPlot.Colormaps;
+
 
 namespace ArcadeSync_Project.Controls
 {
@@ -23,87 +20,79 @@ namespace ArcadeSync_Project.Controls
         public EarnedCredControl()
         {
             InitializeComponent();
-
             showDatabtn.Click += showDatabtn_Click;
+
+            Load += EarnedCredControl_Load;
+
         }
+
+        private void EarnedCredControl_Load(object sender, EventArgs e)
+        {
+            dataRangecmbbx.SelectedIndex = 0;
+            LoadAnalytics();
+        }
+
+
 
         private void showDatabtn_Click(object sender, EventArgs e)
         {
-            using (var form = new EarnedCredDataForm())
-            {
-                form.ShowDialog(); 
-            }
-
-            if (StartEarndtp.Value == null)
-            {
-                MessageBox.Show("Please select a date range.");
-                return;
-            }
-
-            DateTime startDate = StartEarndtp.Value.Date;
-            string range = dataRangecmbbx.SelectedItem?.ToString();
-            LoadGraph(startDate, range);
+            var dataForm = new EarnedCredDataForm();
+            dataForm.ShowDialog();
+            LoadAnalytics();
         }
 
-        private void LoadGraph(DateTime startDate, string range)
+        private void LoadAnalytics()
         {
-            DateTime endDate = range switch
-            {
-                "Weekly" => startDate.AddDays(6),
-                "Monthly" => startDate.AddMonths(1).AddDays(-1),
-                "Yearly" => startDate.AddYears(1).AddDays(-1),
-                _ => startDate.AddDays(6)
-            };
+            DateTime startDate = StartEarndtp.Value.Date;
+            int rangeDays = GetRangeDays();
+            DateTime endDate = startDate.AddDays(rangeDays);
 
-            List<double> xData = new();
-            List<double> yData = new();
+            string query = "SELECT MachineName, CreditsEarned, DateAnalytics FROM EarnedCredAnalytics WHERE DateAnalytics BETWEEN @start AND @end";
+            DataTable dt = new DataTable();
 
             using (OleDbConnection conn = new OleDbConnection(connStr))
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
-                string query = "SELECT DateAnalytics, CreditsEarned FROM Analytics WHERE DateAnalytics BETWEEN @start AND @end";
-                OleDbCommand cmd = new OleDbCommand(query, conn);
                 cmd.Parameters.AddWithValue("@start", startDate);
                 cmd.Parameters.AddWithValue("@end", endDate);
-
-                conn.Open();
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
+                using (OleDbDataAdapter da = new OleDbDataAdapter(cmd))
                 {
-                    DateTime date = Convert.ToDateTime(reader["DateAnalytics"]);
-                    double credits = Convert.ToDouble(reader["CreditsEarned"]);
-
-                    xData.Add(date.ToOADate());
-                    yData.Add(credits);
+                    da.Fill(dt);
                 }
-                conn.Close();
             }
 
-            var plt = formsPlot1.Plot;
-            plt.Clear();
 
-            if (xData.Count > 0)
+            LoadDataGrid(dt);
+        }
+
+        private int GetRangeDays()
+        {
+            string range = dataRangecmbbx.SelectedItem.ToString();
+            return range switch
             {
-                var xs = xData.ToArray();
-                var ys = yData.ToArray();
-
-                plt.Add.Scatter(xs, ys);
-                plt.Axes.DateTimeTicksBottom();
-
-                double xMin = xs.Min();
-                double xMax = xs.Max();
-                double yMin = 0;
-                double yMax = ys.Max() + 250;
-
-                plt.Axes.SetLimits(xMin, xMax, yMin, yMax);
-            }
-            else
-            {
-                plt.Add.Text("No data in selected range", 0, 0);
-            }
+                "Weekly" => 7,
+                "Montly" => 30,
+                "Yearly" => 365,
+                _ => 7,
+            };
+        }
 
 
-            plt.Title($"Credits Earned ({range})");
-            formsPlot1.Refresh();
+
+
+
+        private void LoadDataGrid(DataTable dt)
+        {
+            var result = dt.AsEnumerable()
+                .GroupBy(row => row["MachineName"].ToString())
+                .Select(g => new
+                {
+                    MachineName = g.Key,
+                    TotalCredits = g.Sum(r => Convert.ToInt32(r["CreditsEarned"]))
+                })
+                .ToList();
+
+            TotalEarnedgv.DataSource = result;
         }
     }
 }

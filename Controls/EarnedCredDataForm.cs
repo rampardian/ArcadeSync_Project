@@ -44,7 +44,7 @@ namespace ArcadeSync_Project.Controls
         {
             using (OleDbConnection conn = new OleDbConnection(connStr))
             {
-                string query = "SELECT * FROM Analytics";
+                string query = "SELECT * FROM EarnedCredAnalytics";
                 OleDbDataAdapter da = new OleDbDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 conn.Open();
@@ -57,7 +57,7 @@ namespace ArcadeSync_Project.Controls
         {
             using (OleDbConnection conn = new OleDbConnection(connStr))
             {
-                string query = "INSERT INTO Analytics (MachineID, MachineName, CreditsEarned, DateAnalytics) VALUES (@id, @name, @credits, @date)";
+                string query = "INSERT INTO EarnedCredAnalytics (MachineID, MachineName, CreditsEarned, DateAnalytics) VALUES (@id, @name, @credits, @date)";
                 OleDbCommand cmd = new OleDbCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", DataMachIDtxtbx.Text);
                 cmd.Parameters.AddWithValue("@name", DataMachNamtxtbx.Text);
@@ -79,7 +79,7 @@ namespace ArcadeSync_Project.Controls
 
             using (OleDbConnection conn = new OleDbConnection(connStr))
             {
-                string query = "UPDATE Analytics SET MachineID = @id, MachineName = @name, CreditsEarned = @credits, DateAnalytics = @date WHERE AnalyticsID = @aid";
+                string query = "UPDATE EarnedCredAnalytics SET MachineID = @id, MachineName = @name, CreditsEarned = @credits, DateAnalytics = @date WHERE AnalyticsID = @aid";
                 OleDbCommand cmd = new OleDbCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", DataMachIDtxtbx.Text);
                 cmd.Parameters.AddWithValue("@name", DataMachNamtxtbx.Text);
@@ -102,7 +102,7 @@ namespace ArcadeSync_Project.Controls
 
             using (OleDbConnection conn = new OleDbConnection(connStr))
             {
-                string query = "DELETE FROM Analytics WHERE AnalyticsID = @id";
+                string query = "DELETE FROM EarnedCredAnalytics WHERE AnalyticsID = @id";
                 OleDbCommand cmd = new OleDbCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 conn.Open();

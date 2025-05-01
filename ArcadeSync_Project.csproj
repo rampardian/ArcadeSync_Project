@@ -12,6 +12,7 @@
     <PackageReference Include="MaterialSkin" Version="0.2.1" />
     <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
     <PackageReference Include="ScottPlot.WinForms" Version="5.0.55" />
+    <PackageReference Include="ScottPlot.WPF" Version="5.0.55" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.3" />
   </ItemGroup>
 

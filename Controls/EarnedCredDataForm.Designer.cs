@@ -46,6 +46,7 @@
             // 
             // DataAnadgv
             // 
+            DataAnadgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataAnadgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataAnadgv.Location = new Point(28, 86);
             DataAnadgv.Name = "DataAnadgv";

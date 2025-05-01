@@ -33,10 +33,8 @@
             label3 = new Label();
             dataRangeRentcmbbx = new ComboBox();
             showDatabtn = new MaterialSkin.Controls.MaterialButton();
-            RentIncomePlot = new ScottPlot.WinForms.FormsPlot();
             label1 = new Label();
             StartRentaldtp = new DateTimePicker();
-            DaysRentedPlot = new ScottPlot.WinForms.FormsPlot();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)TotalRentalgv).BeginInit();
             SuspendLayout();
@@ -52,6 +50,7 @@
             // 
             // TotalRentalgv
             // 
+            TotalRentalgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             TotalRentalgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             TotalRentalgv.Location = new Point(544, 357);
             TotalRentalgv.Name = "TotalRentalgv";
@@ -97,14 +96,6 @@
             showDatabtn.UseAccentColor = false;
             showDatabtn.UseVisualStyleBackColor = true;
             // 
-            // RentIncomePlot
-            // 
-            RentIncomePlot.DisplayScale = 1.25F;
-            RentIncomePlot.Location = new Point(30, 30);
-            RentIncomePlot.Name = "RentIncomePlot";
-            RentIncomePlot.Size = new Size(977, 274);
-            RentIncomePlot.TabIndex = 47;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -121,14 +112,6 @@
             StartRentaldtp.Size = new Size(250, 27);
             StartRentaldtp.TabIndex = 48;
             // 
-            // DaysRentedPlot
-            // 
-            DaysRentedPlot.DisplayScale = 1.25F;
-            DaysRentedPlot.Location = new Point(30, 357);
-            DaysRentedPlot.Name = "DaysRentedPlot";
-            DaysRentedPlot.Size = new Size(503, 216);
-            DaysRentedPlot.TabIndex = 57;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -143,13 +126,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label2);
-            Controls.Add(DaysRentedPlot);
             Controls.Add(label4);
             Controls.Add(TotalRentalgv);
             Controls.Add(label3);
             Controls.Add(dataRangeRentcmbbx);
             Controls.Add(showDatabtn);
-            Controls.Add(RentIncomePlot);
             Controls.Add(label1);
             Controls.Add(StartRentaldtp);
             Name = "TotRentControl";
@@ -166,10 +147,8 @@
         private Label label3;
         private ComboBox dataRangeRentcmbbx;
         private MaterialSkin.Controls.MaterialButton showDatabtn;
-        private ScottPlot.WinForms.FormsPlot RentIncomePlot;
         private Label label1;
         private DateTimePicker StartRentaldtp;
-        private ScottPlot.WinForms.FormsPlot DaysRentedPlot;
         private Label label2;
     }
 }
