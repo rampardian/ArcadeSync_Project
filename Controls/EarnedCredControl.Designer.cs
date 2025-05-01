@@ -1,6 +1,6 @@
 ﻿namespace ArcadeSync_Project.Controls
 {
-    partial class AnalyticsControl
+    partial class EarnedCredControl
     {
         /// <summary> 
         /// Required designer variable.

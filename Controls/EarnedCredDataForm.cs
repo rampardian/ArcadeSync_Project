@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace ArcadeSync_Project.Controls
 {
-    public partial class AnalyticsDataForm : MaterialForm
+    public partial class EarnedCredDataForm : MaterialForm
     {
         private string connStr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jared Adlawan\OneDrive\ドキュメント\ArcadeSync Database\ArcadeSync.accdb";
 
-        public AnalyticsDataForm()
+        public EarnedCredDataForm()
         {
             InitializeComponent();
 

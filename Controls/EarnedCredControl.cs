@@ -15,12 +15,12 @@ using ScottPlot.Colormaps;
 
 namespace ArcadeSync_Project.Controls
 {
-    public partial class AnalyticsControl : UserControl
+    public partial class EarnedCredControl : UserControl
     {
         private string connStr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jared Adlawan\OneDrive\ドキュメント\ArcadeSync Database\ArcadeSync.accdb";
 
 
-        public AnalyticsControl()
+        public EarnedCredControl()
         {
             InitializeComponent();
 
@@ -29,7 +29,7 @@ namespace ArcadeSync_Project.Controls
 
         private void showDatabtn_Click(object sender, EventArgs e)
         {
-            using (var form = new AnalyticsDataForm())
+            using (var form = new EarnedCredDataForm())
             {
                 form.ShowDialog(); 
             }

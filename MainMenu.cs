@@ -72,7 +72,7 @@ namespace ArcadeSync_Project
                             break;
 
                         case "Analytics":
-                            selectedControl = new AnalyticsControl();
+                            selectedControl = new EarnedCredControl();
                             break;
                     }
 

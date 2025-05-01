@@ -30,95 +30,161 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            MMTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            EmployeeMana = new TabPage();
-            EmployManaPanel = new Panel();
-            ShiftSched = new TabPage();
-            ShiftSchedPanel = new Panel();
-            RentalSys = new TabPage();
-            RentalPanel = new Panel();
-            Logs = new TabPage();
-            CalenderPanel = new Panel();
-            Inventory = new TabPage();
-            InventoryPanel = new Panel();
-            Registry = new TabPage();
-            RegistryPanel = new Panel();
+            imageList1 = new ImageList(components);
+            RentAna = new TabPage();
+            CredAna = new TabPage();
+            EarnedCredPanel = new Panel();
             Layout = new TabPage();
             LayoutPanel = new Panel();
-            Analytics = new TabPage();
-            AnalyticsPanel = new Panel();
-            imageList1 = new ImageList(components);
-            MMTabControl1.SuspendLayout();
-            EmployeeMana.SuspendLayout();
-            ShiftSched.SuspendLayout();
-            RentalSys.SuspendLayout();
-            Logs.SuspendLayout();
-            Inventory.SuspendLayout();
-            Registry.SuspendLayout();
+            Registry = new TabPage();
+            RegistryPanel = new Panel();
+            Inventory = new TabPage();
+            InventoryPanel = new Panel();
+            Logs = new TabPage();
+            CalenderPanel = new Panel();
+            RentalSys = new TabPage();
+            RentalPanel = new Panel();
+            ShiftSched = new TabPage();
+            ShiftSchedPanel = new Panel();
+            EmployeeMana = new TabPage();
+            EmployManaPanel = new Panel();
+            MMTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            TotRentPanel = new Panel();
+            RentAna.SuspendLayout();
+            CredAna.SuspendLayout();
             Layout.SuspendLayout();
-            Analytics.SuspendLayout();
+            Registry.SuspendLayout();
+            Inventory.SuspendLayout();
+            Logs.SuspendLayout();
+            RentalSys.SuspendLayout();
+            ShiftSched.SuspendLayout();
+            EmployeeMana.SuspendLayout();
+            MMTabControl1.SuspendLayout();
             SuspendLayout();
             // 
-            // MMTabControl1
+            // imageList1
             // 
-            MMTabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            MMTabControl1.Controls.Add(EmployeeMana);
-            MMTabControl1.Controls.Add(ShiftSched);
-            MMTabControl1.Controls.Add(RentalSys);
-            MMTabControl1.Controls.Add(Logs);
-            MMTabControl1.Controls.Add(Inventory);
-            MMTabControl1.Controls.Add(Registry);
-            MMTabControl1.Controls.Add(Layout);
-            MMTabControl1.Controls.Add(Analytics);
-            MMTabControl1.Depth = 0;
-            MMTabControl1.ImageList = imageList1;
-            MMTabControl1.Location = new Point(3, 64);
-            MMTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
-            MMTabControl1.Multiline = true;
-            MMTabControl1.Name = "MMTabControl1";
-            MMTabControl1.SelectedIndex = 0;
-            MMTabControl1.Size = new Size(1094, 714);
-            MMTabControl1.TabIndex = 0;
-            MMTabControl1.SelectedIndexChanged += MMTabControl1_SelectedIndexChanged;
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "rental.png");
+            imageList1.Images.SetKeyName(1, "timekeeping.png");
+            imageList1.Images.SetKeyName(2, "shiftsched.png");
+            imageList1.Images.SetKeyName(3, "logreport.png");
+            imageList1.Images.SetKeyName(4, "inventory.png");
+            imageList1.Images.SetKeyName(5, "registry.png");
+            imageList1.Images.SetKeyName(6, "select.png");
+            imageList1.Images.SetKeyName(7, "layout.png");
+            imageList1.Images.SetKeyName(8, "credA.png");
+            imageList1.Images.SetKeyName(9, "RentA.png");
             // 
-            // EmployeeMana
+            // RentAna
             // 
-            EmployeeMana.Controls.Add(EmployManaPanel);
-            EmployeeMana.ImageKey = "timekeeping.png";
-            EmployeeMana.Location = new Point(4, 74);
-            EmployeeMana.Name = "EmployeeMana";
-            EmployeeMana.Padding = new Padding(3);
-            EmployeeMana.Size = new Size(1086, 636);
-            EmployeeMana.TabIndex = 1;
-            EmployeeMana.Text = "Timekeeping System";
-            EmployeeMana.UseVisualStyleBackColor = true;
+            RentAna.Controls.Add(TotRentPanel);
+            RentAna.ImageKey = "RentA.png";
+            RentAna.Location = new Point(4, 74);
+            RentAna.Name = "RentAna";
+            RentAna.Padding = new Padding(3);
+            RentAna.Size = new Size(1086, 636);
+            RentAna.TabIndex = 8;
+            RentAna.Text = "Total Rentals";
+            RentAna.UseVisualStyleBackColor = true;
             // 
-            // EmployManaPanel
+            // CredAna
             // 
-            EmployManaPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            EmployManaPanel.Location = new Point(3, 3);
-            EmployManaPanel.Name = "EmployManaPanel";
-            EmployManaPanel.Size = new Size(1080, 630);
-            EmployManaPanel.TabIndex = 0;
+            CredAna.Controls.Add(EarnedCredPanel);
+            CredAna.ImageKey = "credA.png";
+            CredAna.Location = new Point(4, 74);
+            CredAna.Name = "CredAna";
+            CredAna.Padding = new Padding(3);
+            CredAna.Size = new Size(1086, 636);
+            CredAna.TabIndex = 7;
+            CredAna.Text = "Earned Credits";
+            CredAna.UseVisualStyleBackColor = true;
             // 
-            // ShiftSched
+            // EarnedCredPanel
             // 
-            ShiftSched.Controls.Add(ShiftSchedPanel);
-            ShiftSched.ImageKey = "shiftsched.png";
-            ShiftSched.Location = new Point(4, 74);
-            ShiftSched.Name = "ShiftSched";
-            ShiftSched.Size = new Size(1086, 636);
-            ShiftSched.TabIndex = 2;
-            ShiftSched.Text = "Shift Schedule";
-            ShiftSched.UseVisualStyleBackColor = true;
+            EarnedCredPanel.Dock = DockStyle.Fill;
+            EarnedCredPanel.Location = new Point(3, 3);
+            EarnedCredPanel.Name = "EarnedCredPanel";
+            EarnedCredPanel.Size = new Size(1080, 630);
+            EarnedCredPanel.TabIndex = 1;
             // 
-            // ShiftSchedPanel
+            // Layout
             // 
-            ShiftSchedPanel.Dock = DockStyle.Fill;
-            ShiftSchedPanel.Location = new Point(0, 0);
-            ShiftSchedPanel.Name = "ShiftSchedPanel";
-            ShiftSchedPanel.Size = new Size(1086, 636);
-            ShiftSchedPanel.TabIndex = 0;
+            Layout.Controls.Add(LayoutPanel);
+            Layout.ImageKey = "layout.png";
+            Layout.Location = new Point(4, 74);
+            Layout.Name = "Layout";
+            Layout.Size = new Size(1086, 636);
+            Layout.TabIndex = 6;
+            Layout.Text = "Arcade Layout";
+            Layout.UseVisualStyleBackColor = true;
+            // 
+            // LayoutPanel
+            // 
+            LayoutPanel.Dock = DockStyle.Fill;
+            LayoutPanel.Location = new Point(0, 0);
+            LayoutPanel.Name = "LayoutPanel";
+            LayoutPanel.Size = new Size(1086, 636);
+            LayoutPanel.TabIndex = 0;
+            // 
+            // Registry
+            // 
+            Registry.Controls.Add(RegistryPanel);
+            Registry.ImageKey = "registry.png";
+            Registry.Location = new Point(4, 74);
+            Registry.Name = "Registry";
+            Registry.Size = new Size(1086, 636);
+            Registry.TabIndex = 5;
+            Registry.Text = "Registry";
+            Registry.UseVisualStyleBackColor = true;
+            // 
+            // RegistryPanel
+            // 
+            RegistryPanel.Dock = DockStyle.Fill;
+            RegistryPanel.Location = new Point(0, 0);
+            RegistryPanel.Name = "RegistryPanel";
+            RegistryPanel.Size = new Size(1086, 636);
+            RegistryPanel.TabIndex = 0;
+            // 
+            // Inventory
+            // 
+            Inventory.Controls.Add(InventoryPanel);
+            Inventory.ImageKey = "inventory.png";
+            Inventory.Location = new Point(4, 74);
+            Inventory.Name = "Inventory";
+            Inventory.Size = new Size(1086, 636);
+            Inventory.TabIndex = 4;
+            Inventory.Text = "Arcade Inventory";
+            Inventory.UseVisualStyleBackColor = true;
+            // 
+            // InventoryPanel
+            // 
+            InventoryPanel.Dock = DockStyle.Fill;
+            InventoryPanel.Location = new Point(0, 0);
+            InventoryPanel.Name = "InventoryPanel";
+            InventoryPanel.Size = new Size(1086, 636);
+            InventoryPanel.TabIndex = 0;
+            // 
+            // Logs
+            // 
+            Logs.Controls.Add(CalenderPanel);
+            Logs.ImageKey = "logreport.png";
+            Logs.Location = new Point(4, 74);
+            Logs.Name = "Logs";
+            Logs.Size = new Size(1086, 636);
+            Logs.TabIndex = 3;
+            Logs.Text = "Log Report Calendar";
+            Logs.UseVisualStyleBackColor = true;
+            // 
+            // CalenderPanel
+            // 
+            CalenderPanel.Dock = DockStyle.Fill;
+            CalenderPanel.Location = new Point(0, 0);
+            CalenderPanel.Name = "CalenderPanel";
+            CalenderPanel.Size = new Size(1086, 636);
+            CalenderPanel.TabIndex = 0;
             // 
             // RentalSys
             // 
@@ -140,116 +206,75 @@
             RentalPanel.Size = new Size(1080, 630);
             RentalPanel.TabIndex = 0;
             // 
-            // Logs
+            // ShiftSched
             // 
-            Logs.Controls.Add(CalenderPanel);
-            Logs.ImageKey = "logreport.png";
-            Logs.Location = new Point(4, 74);
-            Logs.Name = "Logs";
-            Logs.Size = new Size(1086, 636);
-            Logs.TabIndex = 3;
-            Logs.Text = "Log Report Calendar";
-            Logs.UseVisualStyleBackColor = true;
+            ShiftSched.Controls.Add(ShiftSchedPanel);
+            ShiftSched.ImageKey = "shiftsched.png";
+            ShiftSched.Location = new Point(4, 74);
+            ShiftSched.Name = "ShiftSched";
+            ShiftSched.Size = new Size(1086, 636);
+            ShiftSched.TabIndex = 2;
+            ShiftSched.Text = "Shift Schedule";
+            ShiftSched.UseVisualStyleBackColor = true;
             // 
-            // CalenderPanel
+            // ShiftSchedPanel
             // 
-            CalenderPanel.Dock = DockStyle.Fill;
-            CalenderPanel.Location = new Point(0, 0);
-            CalenderPanel.Name = "CalenderPanel";
-            CalenderPanel.Size = new Size(1086, 636);
-            CalenderPanel.TabIndex = 0;
+            ShiftSchedPanel.Dock = DockStyle.Fill;
+            ShiftSchedPanel.Location = new Point(0, 0);
+            ShiftSchedPanel.Name = "ShiftSchedPanel";
+            ShiftSchedPanel.Size = new Size(1086, 636);
+            ShiftSchedPanel.TabIndex = 0;
             // 
-            // Inventory
+            // EmployeeMana
             // 
-            Inventory.Controls.Add(InventoryPanel);
-            Inventory.ImageKey = "inventory.png";
-            Inventory.Location = new Point(4, 74);
-            Inventory.Name = "Inventory";
-            Inventory.Size = new Size(1086, 636);
-            Inventory.TabIndex = 4;
-            Inventory.Text = "Arcade Inventory";
-            Inventory.UseVisualStyleBackColor = true;
+            EmployeeMana.Controls.Add(EmployManaPanel);
+            EmployeeMana.ImageKey = "timekeeping.png";
+            EmployeeMana.Location = new Point(4, 74);
+            EmployeeMana.Name = "EmployeeMana";
+            EmployeeMana.Padding = new Padding(3);
+            EmployeeMana.Size = new Size(1086, 636);
+            EmployeeMana.TabIndex = 1;
+            EmployeeMana.Text = "Timekeeping System";
+            EmployeeMana.UseVisualStyleBackColor = true;
             // 
-            // InventoryPanel
+            // EmployManaPanel
             // 
-            InventoryPanel.Dock = DockStyle.Fill;
-            InventoryPanel.Location = new Point(0, 0);
-            InventoryPanel.Name = "InventoryPanel";
-            InventoryPanel.Size = new Size(1086, 636);
-            InventoryPanel.TabIndex = 0;
+            EmployManaPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            EmployManaPanel.Location = new Point(3, 3);
+            EmployManaPanel.Name = "EmployManaPanel";
+            EmployManaPanel.Size = new Size(1080, 630);
+            EmployManaPanel.TabIndex = 0;
             // 
-            // Registry
+            // MMTabControl1
             // 
-            Registry.Controls.Add(RegistryPanel);
-            Registry.ImageKey = "registry.png";
-            Registry.Location = new Point(4, 74);
-            Registry.Name = "Registry";
-            Registry.Size = new Size(1086, 636);
-            Registry.TabIndex = 5;
-            Registry.Text = "Registry";
-            Registry.UseVisualStyleBackColor = true;
+            MMTabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            MMTabControl1.Controls.Add(EmployeeMana);
+            MMTabControl1.Controls.Add(ShiftSched);
+            MMTabControl1.Controls.Add(RentalSys);
+            MMTabControl1.Controls.Add(Logs);
+            MMTabControl1.Controls.Add(Inventory);
+            MMTabControl1.Controls.Add(Registry);
+            MMTabControl1.Controls.Add(Layout);
+            MMTabControl1.Controls.Add(CredAna);
+            MMTabControl1.Controls.Add(RentAna);
+            MMTabControl1.Depth = 0;
+            MMTabControl1.ImageList = imageList1;
+            MMTabControl1.Location = new Point(3, 64);
+            MMTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
+            MMTabControl1.Multiline = true;
+            MMTabControl1.Name = "MMTabControl1";
+            MMTabControl1.SelectedIndex = 0;
+            MMTabControl1.Size = new Size(1094, 714);
+            MMTabControl1.TabIndex = 0;
+            MMTabControl1.SelectedIndexChanged += MMTabControl1_SelectedIndexChanged;
             // 
-            // RegistryPanel
+            // TotRentPanel
             // 
-            RegistryPanel.Dock = DockStyle.Fill;
-            RegistryPanel.Location = new Point(0, 0);
-            RegistryPanel.Name = "RegistryPanel";
-            RegistryPanel.Size = new Size(1086, 636);
-            RegistryPanel.TabIndex = 0;
-            // 
-            // Layout
-            // 
-            Layout.Controls.Add(LayoutPanel);
-            Layout.ImageKey = "layout.png";
-            Layout.Location = new Point(4, 74);
-            Layout.Name = "Layout";
-            Layout.Size = new Size(1086, 636);
-            Layout.TabIndex = 6;
-            Layout.Text = "Arcade Layout";
-            Layout.UseVisualStyleBackColor = true;
-            // 
-            // LayoutPanel
-            // 
-            LayoutPanel.Dock = DockStyle.Fill;
-            LayoutPanel.Location = new Point(0, 0);
-            LayoutPanel.Name = "LayoutPanel";
-            LayoutPanel.Size = new Size(1086, 636);
-            LayoutPanel.TabIndex = 0;
-            // 
-            // Analytics
-            // 
-            Analytics.Controls.Add(AnalyticsPanel);
-            Analytics.ImageKey = "analytics.png";
-            Analytics.Location = new Point(4, 74);
-            Analytics.Name = "Analytics";
-            Analytics.Padding = new Padding(3);
-            Analytics.Size = new Size(1086, 636);
-            Analytics.TabIndex = 7;
-            Analytics.Text = "Analytics";
-            Analytics.UseVisualStyleBackColor = true;
-            // 
-            // AnalyticsPanel
-            // 
-            AnalyticsPanel.Dock = DockStyle.Fill;
-            AnalyticsPanel.Location = new Point(3, 3);
-            AnalyticsPanel.Name = "AnalyticsPanel";
-            AnalyticsPanel.Size = new Size(1080, 630);
-            AnalyticsPanel.TabIndex = 1;
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "rental.png");
-            imageList1.Images.SetKeyName(1, "timekeeping.png");
-            imageList1.Images.SetKeyName(2, "shiftsched.png");
-            imageList1.Images.SetKeyName(3, "logreport.png");
-            imageList1.Images.SetKeyName(4, "inventory.png");
-            imageList1.Images.SetKeyName(5, "registry.png");
-            imageList1.Images.SetKeyName(6, "select.png");
-            imageList1.Images.SetKeyName(7, "layout.png");
-            imageList1.Images.SetKeyName(8, "analytics.png");
+            TotRentPanel.Dock = DockStyle.Fill;
+            TotRentPanel.Location = new Point(3, 3);
+            TotRentPanel.Name = "TotRentPanel";
+            TotRentPanel.Size = new Size(1080, 630);
+            TotRentPanel.TabIndex = 2;
             // 
             // MainMenu
             // 
@@ -263,38 +288,40 @@
             Name = "MainMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ArcadeSync Main Menu";
-            MMTabControl1.ResumeLayout(false);
-            EmployeeMana.ResumeLayout(false);
-            ShiftSched.ResumeLayout(false);
-            RentalSys.ResumeLayout(false);
-            Logs.ResumeLayout(false);
-            Inventory.ResumeLayout(false);
-            Registry.ResumeLayout(false);
+            RentAna.ResumeLayout(false);
+            CredAna.ResumeLayout(false);
             Layout.ResumeLayout(false);
-            Analytics.ResumeLayout(false);
+            Registry.ResumeLayout(false);
+            Inventory.ResumeLayout(false);
+            Logs.ResumeLayout(false);
+            RentalSys.ResumeLayout(false);
+            ShiftSched.ResumeLayout(false);
+            EmployeeMana.ResumeLayout(false);
+            MMTabControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialTabControl MMTabControl1;
-        private TabPage RentalSys;
-        private TabPage EmployeeMana;
-        private TabPage ShiftSched;
-        private TabPage Logs;
-        private TabPage Inventory;
-        private TabPage Registry;
         private ImageList imageList1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
-        private Panel EmployManaPanel;
-        private Panel ShiftSchedPanel;
-        private Panel RentalPanel;
-        private Panel CalenderPanel;
-        private Panel InventoryPanel;
-        private Panel RegistryPanel;
+        private TabPage RentAna;
+        private TabPage CredAna;
+        private Panel EarnedCredPanel;
         private TabPage Layout;
         private Panel LayoutPanel;
-        private TabPage Analytics;
-        private Panel AnalyticsPanel;
+        private TabPage Registry;
+        private Panel RegistryPanel;
+        private TabPage Inventory;
+        private Panel InventoryPanel;
+        private TabPage Logs;
+        private Panel CalenderPanel;
+        private TabPage RentalSys;
+        private Panel RentalPanel;
+        private TabPage ShiftSched;
+        private Panel ShiftSchedPanel;
+        private TabPage EmployeeMana;
+        private Panel EmployManaPanel;
+        private MaterialSkin.Controls.MaterialTabControl MMTabControl1;
+        private Panel TotRentPanel;
     }
 }
