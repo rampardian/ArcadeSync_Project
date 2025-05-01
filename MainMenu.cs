@@ -71,8 +71,12 @@ namespace ArcadeSync_Project
                             selectedControl = new LayoutControl();
                             break;
 
-                        case "Analytics":
+                        case "Earned Credits":
                             selectedControl = new EarnedCredControl();
+                            break;
+
+                        case "Total Rentals":
+                            selectedControl = new TotRentControl();
                             break;
                     }
 
