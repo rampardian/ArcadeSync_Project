@@ -46,8 +46,8 @@
             Layout = new TabPage();
             LayoutPanel = new Panel();
             Analytics = new TabPage();
-            imageList1 = new ImageList(components);
             AnalyticsPanel = new Panel();
+            imageList1 = new ImageList(components);
             MMTabControl1.SuspendLayout();
             EmployeeMana.SuspendLayout();
             ShiftSched.SuspendLayout();
@@ -228,6 +228,14 @@
             Analytics.Text = "Analytics";
             Analytics.UseVisualStyleBackColor = true;
             // 
+            // AnalyticsPanel
+            // 
+            AnalyticsPanel.Dock = DockStyle.Fill;
+            AnalyticsPanel.Location = new Point(3, 3);
+            AnalyticsPanel.Name = "AnalyticsPanel";
+            AnalyticsPanel.Size = new Size(1080, 630);
+            AnalyticsPanel.TabIndex = 1;
+            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
@@ -242,14 +250,6 @@
             imageList1.Images.SetKeyName(6, "select.png");
             imageList1.Images.SetKeyName(7, "layout.png");
             imageList1.Images.SetKeyName(8, "analytics.png");
-            // 
-            // AnalyticsPanel
-            // 
-            AnalyticsPanel.Dock = DockStyle.Fill;
-            AnalyticsPanel.Location = new Point(3, 3);
-            AnalyticsPanel.Name = "AnalyticsPanel";
-            AnalyticsPanel.Size = new Size(1080, 630);
-            AnalyticsPanel.TabIndex = 1;
             // 
             // MainMenu
             // 

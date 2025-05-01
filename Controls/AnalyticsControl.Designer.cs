@@ -28,12 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            formsPlot1 = new ScottPlot.WinForms.FormsPlot();
-            dateTimePicker1 = new DateTimePicker();
             label1 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             dateRangecmbbx = new ComboBox();
+            formsPlot1 = new ScottPlot.WinForms.FormsPlot();
             showDatabtn = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(33, 590);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Starting Date:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(30, 614);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.TabIndex = 2;
+            // 
+            // dateRangecmbbx
+            // 
+            dateRangecmbbx.FormattingEnabled = true;
+            dateRangecmbbx.Items.AddRange(new object[] { "Weekly", "Montly", "Yearly" });
+            dateRangecmbbx.Location = new Point(286, 613);
+            dateRangecmbbx.Name = "dateRangecmbbx";
+            dateRangecmbbx.Size = new Size(151, 28);
+            dateRangecmbbx.TabIndex = 4;
             // 
             // formsPlot1
             // 
@@ -43,31 +68,6 @@
             formsPlot1.Size = new Size(1004, 548);
             formsPlot1.TabIndex = 0;
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(30, 617);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(33, 593);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Starting Date:";
-            // 
-            // dateRangecmbbx
-            // 
-            dateRangecmbbx.FormattingEnabled = true;
-            dateRangecmbbx.Items.AddRange(new object[] { "Weekly", "Montly", "Yearly" });
-            dateRangecmbbx.Location = new Point(286, 616);
-            dateRangecmbbx.Name = "dateRangecmbbx";
-            dateRangecmbbx.Size = new Size(151, 28);
-            dateRangecmbbx.TabIndex = 4;
-            // 
             // showDatabtn
             // 
             showDatabtn.AutoSize = false;
@@ -76,7 +76,7 @@
             showDatabtn.Depth = 0;
             showDatabtn.HighEmphasis = true;
             showDatabtn.Icon = null;
-            showDatabtn.Location = new Point(884, 608);
+            showDatabtn.Location = new Point(884, 605);
             showDatabtn.Margin = new Padding(4, 6, 4, 6);
             showDatabtn.MouseState = MaterialSkin.MouseState.HOVER;
             showDatabtn.Name = "showDatabtn";
@@ -94,10 +94,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(showDatabtn);
+            Controls.Add(formsPlot1);
             Controls.Add(dateRangecmbbx);
             Controls.Add(label1);
             Controls.Add(dateTimePicker1);
-            Controls.Add(formsPlot1);
             Name = "AnalyticsControl";
             Size = new Size(1080, 665);
             ResumeLayout(false);
@@ -106,10 +106,10 @@
 
         #endregion
 
-        private ScottPlot.WinForms.FormsPlot formsPlot1;
-        private DateTimePicker dateTimePicker1;
         private Label label1;
+        private DateTimePicker dateTimePicker1;
         private ComboBox dateRangecmbbx;
+        private ScottPlot.WinForms.FormsPlot formsPlot1;
         private MaterialSkin.Controls.MaterialButton showDatabtn;
     }
 }
