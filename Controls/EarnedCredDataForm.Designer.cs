@@ -118,7 +118,7 @@
             // 
             // DataMachIDtxtbx
             // 
-            DataMachIDtxtbx.Location = new Point(159, 436);
+            DataMachIDtxtbx.Location = new Point(157, 439);
             DataMachIDtxtbx.Name = "DataMachIDtxtbx";
             DataMachIDtxtbx.Size = new Size(315, 27);
             DataMachIDtxtbx.TabIndex = 39;
@@ -201,7 +201,7 @@
             backtoGraphbtn.UseVisualStyleBackColor = true;
             backtoGraphbtn.Click += backtoGraphbtn_Click;
             // 
-            // AnalyticsDataForm
+            // EarnedCredDataForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -219,8 +219,8 @@
             Controls.Add(addDatabtn);
             Controls.Add(deleteDatabtn);
             Controls.Add(DataAnadgv);
-            Name = "AnalyticsDataForm";
-            Text = "Analytics Data";
+            Name = "EarnedCredDataForm";
+            Text = "Earned Credits Data Form";
             ((System.ComponentModel.ISupportInitialize)DataAnadgv).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             imageList1 = new ImageList(components);
             RentAna = new TabPage();
+            TotRentPanel = new Panel();
             CredAna = new TabPage();
             EarnedCredPanel = new Panel();
             Layout = new TabPage();
@@ -49,7 +50,6 @@
             EmployeeMana = new TabPage();
             EmployManaPanel = new Panel();
             MMTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            TotRentPanel = new Panel();
             RentAna.SuspendLayout();
             CredAna.SuspendLayout();
             Layout.SuspendLayout();
@@ -89,6 +89,14 @@
             RentAna.TabIndex = 8;
             RentAna.Text = "Total Rentals";
             RentAna.UseVisualStyleBackColor = true;
+            // 
+            // TotRentPanel
+            // 
+            TotRentPanel.Dock = DockStyle.Fill;
+            TotRentPanel.Location = new Point(3, 3);
+            TotRentPanel.Name = "TotRentPanel";
+            TotRentPanel.Size = new Size(1080, 630);
+            TotRentPanel.TabIndex = 2;
             // 
             // CredAna
             // 
@@ -247,7 +255,6 @@
             // 
             // MMTabControl1
             // 
-            MMTabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             MMTabControl1.Controls.Add(EmployeeMana);
             MMTabControl1.Controls.Add(ShiftSched);
             MMTabControl1.Controls.Add(RentalSys);
@@ -258,6 +265,7 @@
             MMTabControl1.Controls.Add(CredAna);
             MMTabControl1.Controls.Add(RentAna);
             MMTabControl1.Depth = 0;
+            MMTabControl1.Dock = DockStyle.Fill;
             MMTabControl1.ImageList = imageList1;
             MMTabControl1.Location = new Point(3, 64);
             MMTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -267,14 +275,6 @@
             MMTabControl1.Size = new Size(1094, 714);
             MMTabControl1.TabIndex = 0;
             MMTabControl1.SelectedIndexChanged += MMTabControl1_SelectedIndexChanged;
-            // 
-            // TotRentPanel
-            // 
-            TotRentPanel.Dock = DockStyle.Fill;
-            TotRentPanel.Location = new Point(3, 3);
-            TotRentPanel.Name = "TotRentPanel";
-            TotRentPanel.Size = new Size(1080, 630);
-            TotRentPanel.TabIndex = 2;
             // 
             // MainMenu
             // 

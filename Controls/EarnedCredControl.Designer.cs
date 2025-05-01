@@ -29,43 +29,40 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateRangecmbbx = new ComboBox();
+            StartEarndtp = new DateTimePicker();
             formsPlot1 = new ScottPlot.WinForms.FormsPlot();
             showDatabtn = new MaterialSkin.Controls.MaterialButton();
+            dataRangecmbbx = new ComboBox();
+            label3 = new Label();
+            TotalEarnedgv = new DataGridView();
+            label2 = new Label();
+            label4 = new Label();
+            DaysRentedPlot = new ScottPlot.WinForms.FormsPlot();
+            ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 590);
+            label1.Location = new Point(30, 590);
             label1.Name = "label1";
             label1.Size = new Size(100, 20);
             label1.TabIndex = 3;
             label1.Text = "Starting Date:";
             // 
-            // dateTimePicker1
+            // StartEarndtp
             // 
-            dateTimePicker1.Location = new Point(30, 614);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 2;
-            // 
-            // dateRangecmbbx
-            // 
-            dateRangecmbbx.FormattingEnabled = true;
-            dateRangecmbbx.Items.AddRange(new object[] { "Weekly", "Montly", "Yearly" });
-            dateRangecmbbx.Location = new Point(286, 613);
-            dateRangecmbbx.Name = "dateRangecmbbx";
-            dateRangecmbbx.Size = new Size(151, 28);
-            dateRangecmbbx.TabIndex = 4;
+            StartEarndtp.Location = new Point(30, 614);
+            StartEarndtp.Name = "StartEarndtp";
+            StartEarndtp.Size = new Size(250, 27);
+            StartEarndtp.TabIndex = 2;
             // 
             // formsPlot1
             // 
             formsPlot1.DisplayScale = 1.25F;
             formsPlot1.Location = new Point(30, 30);
             formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(1004, 548);
+            formsPlot1.Size = new Size(977, 274);
             formsPlot1.TabIndex = 0;
             // 
             // showDatabtn
@@ -76,7 +73,7 @@
             showDatabtn.Depth = 0;
             showDatabtn.HighEmphasis = true;
             showDatabtn.Icon = null;
-            showDatabtn.Location = new Point(884, 605);
+            showDatabtn.Location = new Point(857, 608);
             showDatabtn.Margin = new Padding(4, 6, 4, 6);
             showDatabtn.MouseState = MaterialSkin.MouseState.HOVER;
             showDatabtn.Name = "showDatabtn";
@@ -89,17 +86,76 @@
             showDatabtn.UseVisualStyleBackColor = true;
             showDatabtn.Click += showDatabtn_Click;
             // 
-            // AnalyticsControl
+            // dataRangecmbbx
+            // 
+            dataRangecmbbx.FormattingEnabled = true;
+            dataRangecmbbx.Items.AddRange(new object[] { "Weekly", "Montly", "Yearly" });
+            dataRangecmbbx.Location = new Point(286, 613);
+            dataRangecmbbx.Name = "dataRangecmbbx";
+            dataRangecmbbx.Size = new Size(250, 28);
+            dataRangecmbbx.TabIndex = 42;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(286, 590);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 20);
+            label3.TabIndex = 43;
+            label3.Text = "Data Range:";
+            // 
+            // TotalEarnedgv
+            // 
+            TotalEarnedgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TotalEarnedgv.Location = new Point(544, 357);
+            TotalEarnedgv.Name = "TotalEarnedgv";
+            TotalEarnedgv.RowHeadersWidth = 51;
+            TotalEarnedgv.Size = new Size(463, 216);
+            TotalEarnedgv.TabIndex = 44;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(30, 334);
+            label2.Name = "label2";
+            label2.Size = new Size(287, 20);
+            label2.TabIndex = 45;
+            label2.Text = "Shares of Credits per Machine: (Pie Graph)";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(544, 334);
+            label4.Name = "label4";
+            label4.Size = new Size(302, 20);
+            label4.TabIndex = 46;
+            label4.Text = "Total Earned Credits (based on Data Range):";
+            // 
+            // DaysRentedPlot
+            // 
+            DaysRentedPlot.DisplayScale = 1.25F;
+            DaysRentedPlot.Location = new Point(30, 357);
+            DaysRentedPlot.Name = "DaysRentedPlot";
+            DaysRentedPlot.Size = new Size(503, 216);
+            DaysRentedPlot.TabIndex = 58;
+            // 
+            // EarnedCredControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(DaysRentedPlot);
+            Controls.Add(label4);
+            Controls.Add(label2);
+            Controls.Add(TotalEarnedgv);
+            Controls.Add(label3);
+            Controls.Add(dataRangecmbbx);
             Controls.Add(showDatabtn);
             Controls.Add(formsPlot1);
-            Controls.Add(dateRangecmbbx);
             Controls.Add(label1);
-            Controls.Add(dateTimePicker1);
-            Name = "AnalyticsControl";
+            Controls.Add(StartEarndtp);
+            Name = "EarnedCredControl";
             Size = new Size(1080, 665);
+            ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -107,9 +163,14 @@
         #endregion
 
         private Label label1;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox dateRangecmbbx;
+        private DateTimePicker StartEarndtp;
         private ScottPlot.WinForms.FormsPlot formsPlot1;
         private MaterialSkin.Controls.MaterialButton showDatabtn;
+        private ComboBox dataRangecmbbx;
+        private Label label3;
+        private DataGridView TotalEarnedgv;
+        private Label label2;
+        private Label label4;
+        private ScottPlot.WinForms.FormsPlot DaysRentedPlot;
     }
 }

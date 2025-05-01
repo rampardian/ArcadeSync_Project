@@ -34,14 +34,14 @@ namespace ArcadeSync_Project.Controls
                 form.ShowDialog(); 
             }
 
-            if (dateRangecmbbx.SelectedItem == null)
+            if (StartEarndtp.Value == null)
             {
                 MessageBox.Show("Please select a date range.");
                 return;
             }
 
-            DateTime startDate = dateTimePicker1.Value.Date;
-            string range = dateRangecmbbx.SelectedItem.ToString();
+            DateTime startDate = StartEarndtp.Value.Date;
+            string range = dataRangecmbbx.SelectedItem?.ToString();
             LoadGraph(startDate, range);
         }
 
