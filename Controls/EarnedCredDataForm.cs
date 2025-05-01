@@ -32,12 +32,13 @@ namespace ArcadeSync_Project.Controls
                 TextShade.WHITE   // Text Color
             );
 
+            DataAnadgv.DefaultCellStyle.BackColor = Color.White;
+            DataAnadgv.DefaultCellStyle.ForeColor = Color.Black;
+            DataAnadgv.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            DataAnadgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
             LoadAnalyticsData();
 
-            addDatabtn.Click += addDatabtn_Click;
-            updateDatabtn.Click += updateDatabtn_Click;
-            deleteDatabtn.Click += deleteDatabtn_Click;
-            backtoGraphbtn.Click += backtoGraphbtn_Click;
         }
 
         private void LoadAnalyticsData()
@@ -96,20 +97,38 @@ namespace ArcadeSync_Project.Controls
 
         private void deleteDatabtn_Click(object sender, EventArgs e)
         {
-            if (DataAnadgv.CurrentRow == null) return;
-
-            int id = Convert.ToInt32(DataAnadgv.CurrentRow.Cells["AnalyticsID"].Value);
-
-            using (OleDbConnection conn = new OleDbConnection(connStr))
+            if (DataAnadgv.CurrentRow == null)
             {
-                string query = "DELETE FROM EarnedCredAnalytics WHERE AnalyticsID = @id";
-                OleDbCommand cmd = new OleDbCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", id);
-                conn.Open();
-                cmd.ExecuteNonQuery();
+                return;
             }
 
-            LoadAnalyticsData();
+
+            if (DataAnadgv.SelectedRows.Count > 0)
+            {
+                var cellValue = DataAnadgv.SelectedRows[0].Cells["AnalyticsID"].Value;
+
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int id))
+                {
+                    using (OleDbConnection conn = new OleDbConnection(connStr))
+                    {
+                        string query = "DELETE FROM EarnedCredAnalytics WHERE AnalyticsID = @id";
+                        OleDbCommand cmd = new OleDbCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    LoadAnalyticsData();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid or missing AnalyticsID. Please select a valid row.", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No row selected. Please select a row to delete.", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void backtoGraphbtn_Click(object sender, EventArgs e)

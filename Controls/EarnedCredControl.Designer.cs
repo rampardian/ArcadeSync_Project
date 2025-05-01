@@ -30,13 +30,16 @@
         {
             label1 = new Label();
             StartEarndtp = new DateTimePicker();
-            formsPlot1 = new ScottPlot.WinForms.FormsPlot();
             showDatabtn = new MaterialSkin.Controls.MaterialButton();
             dataRangecmbbx = new ComboBox();
             label3 = new Label();
             TotalEarnedgv = new DataGridView();
             label4 = new Label();
+            earnedCredPicBx = new PictureBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)earnedCredPicBx).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -54,14 +57,6 @@
             StartEarndtp.Name = "StartEarndtp";
             StartEarndtp.Size = new Size(250, 27);
             StartEarndtp.TabIndex = 2;
-            // 
-            // formsPlot1
-            // 
-            formsPlot1.DisplayScale = 1.25F;
-            formsPlot1.Location = new Point(30, 30);
-            formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(977, 274);
-            formsPlot1.TabIndex = 0;
             // 
             // showDatabtn
             // 
@@ -104,6 +99,7 @@
             // 
             // TotalEarnedgv
             // 
+            TotalEarnedgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             TotalEarnedgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             TotalEarnedgv.Location = new Point(30, 373);
             TotalEarnedgv.Name = "TotalEarnedgv";
@@ -120,6 +116,22 @@
             label4.TabIndex = 46;
             label4.Text = "Total Earned Credits (based on Data Range):";
             // 
+            // earnedCredPicBx
+            // 
+            earnedCredPicBx.Location = new Point(5, 15);
+            earnedCredPicBx.Name = "earnedCredPicBx";
+            earnedCredPicBx.Size = new Size(989, 305);
+            earnedCredPicBx.TabIndex = 47;
+            earnedCredPicBx.TabStop = false;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(earnedCredPicBx);
+            panel1.Location = new Point(30, 15);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1004, 334);
+            panel1.TabIndex = 48;
+            // 
             // EarnedCredControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -129,12 +141,14 @@
             Controls.Add(label3);
             Controls.Add(dataRangecmbbx);
             Controls.Add(showDatabtn);
-            Controls.Add(formsPlot1);
             Controls.Add(label1);
             Controls.Add(StartEarndtp);
+            Controls.Add(panel1);
             Name = "EarnedCredControl";
             Size = new Size(1080, 665);
             ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).EndInit();
+            ((System.ComponentModel.ISupportInitialize)earnedCredPicBx).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,11 +157,12 @@
 
         private Label label1;
         private DateTimePicker StartEarndtp;
-        private ScottPlot.WinForms.FormsPlot formsPlot1;
         private MaterialSkin.Controls.MaterialButton showDatabtn;
         private ComboBox dataRangecmbbx;
         private Label label3;
         private DataGridView TotalEarnedgv;
         private Label label4;
+        private PictureBox earnedCredPicBx;
+        private Panel panel1;
     }
 }
