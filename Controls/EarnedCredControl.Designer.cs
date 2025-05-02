@@ -36,10 +36,8 @@
             TotalEarnedgv = new DataGridView();
             label4 = new Label();
             earnedCredPicBx = new PictureBox();
-            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).BeginInit();
             ((System.ComponentModel.ISupportInitialize)earnedCredPicBx).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -118,24 +116,17 @@
             // 
             // earnedCredPicBx
             // 
-            earnedCredPicBx.Location = new Point(5, 15);
+            earnedCredPicBx.Location = new Point(30, 30);
             earnedCredPicBx.Name = "earnedCredPicBx";
             earnedCredPicBx.Size = new Size(989, 305);
             earnedCredPicBx.TabIndex = 47;
             earnedCredPicBx.TabStop = false;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(earnedCredPicBx);
-            panel1.Location = new Point(30, 15);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1004, 334);
-            panel1.TabIndex = 48;
-            // 
             // EarnedCredControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(earnedCredPicBx);
             Controls.Add(label4);
             Controls.Add(TotalEarnedgv);
             Controls.Add(label3);
@@ -143,12 +134,10 @@
             Controls.Add(showDatabtn);
             Controls.Add(label1);
             Controls.Add(StartEarndtp);
-            Controls.Add(panel1);
             Name = "EarnedCredControl";
             Size = new Size(1080, 665);
             ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).EndInit();
             ((System.ComponentModel.ISupportInitialize)earnedCredPicBx).EndInit();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -163,6 +152,5 @@
         private DataGridView TotalEarnedgv;
         private Label label4;
         private PictureBox earnedCredPicBx;
-        private Panel panel1;
     }
 }
