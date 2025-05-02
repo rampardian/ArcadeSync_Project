@@ -162,7 +162,7 @@ namespace ArcadeSync_Project.Controls
 
             var categoryAxis = new CategoryAxis
             {
-                Position = AxisPosition.Left, // MOVED: Machine names now display on the Left (Y-axis)
+                Position = AxisPosition.Left, //y-axis
                 Key = "MachineAxis",
                 ItemsSource = daysData,
                 LabelField = "Machine",
@@ -175,7 +175,7 @@ namespace ArcadeSync_Project.Controls
 
             model.Axes.Add(new LinearAxis
             {
-                Position = AxisPosition.Bottom, // MOVED: Values on the X-axis
+                Position = AxisPosition.Bottom, //x-axis
                 Title = "Total Days",
                 TextColor = OxyColors.Black,
                 Font = "Segoe UI",
