@@ -169,7 +169,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AgADAAAAAiCAABAgAACABAACAAAAAIAAAAAAAAhCACA=</HashCode>
+      <HashCode>AgADAAAAACAAABAAAACAAAACAAAAAAAAAAAAAAhAAAA=</HashCode>
       <FileName>Controls\EarnedCredControl.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -179,8 +179,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AiAAAIAAICCAAFAAAACAAAQCBAAAAIABAAAAAAAAIAE=</HashCode>
-      <FileName>Controls\TotRentControl.cs</FileName>
+      <HashCode>AiAAAIAAACAAAFAAAACAAAACAAAAAAABAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
