@@ -24,7 +24,7 @@ namespace ArcadeSync_Project.Controls
 
         private void LayoutControl_Load(object sender, EventArgs e)
         {
-            string query = "SELECT MachineName, Location, ArcadeImage FROM ArcadeLayout";
+            string query = "SELECT MachineName, Location, ArcadeImage FROM ArcadeInventory";
             using (OleDbConnection conn = new OleDbConnection(connStr))
             {
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -35,7 +35,7 @@ namespace ArcadeSync_Project.Controls
                     {
                         string location = reader["Location"].ToString();
 
-                        if(Controls.Find(location, true).FirstOrDefault() is PictureBox box && !reader.IsDBNull(2))
+                        if (Controls.Find(location, true).FirstOrDefault() is PictureBox box && !reader.IsDBNull(2))
                         {
                             byte[] imageBytes = (byte[])reader["ArcadeImage"];
                             using (MemoryStream ms = new MemoryStream(imageBytes))
@@ -47,6 +47,13 @@ namespace ArcadeSync_Project.Controls
                     }
                 }
             }
+        }
+
+        private void transferLayoutbtn_Click(object sender, EventArgs e)
+        {
+            var layoutForm = new LayoutForm();
+            layoutForm.LayoutUpdated += (s, args) => LayoutControl_Load(this, EventArgs.Empty);
+            layoutForm.Show();
         }
     }
 }

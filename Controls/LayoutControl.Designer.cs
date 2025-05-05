@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             transferLayoutbtn = new MaterialSkin.Controls.MaterialButton();
-            saveLayoutbtn = new MaterialSkin.Controls.MaterialButton();
             pictureBox1 = new PictureBox();
             A1 = new PictureBox();
             A2 = new PictureBox();
@@ -60,7 +59,7 @@
             transferLayoutbtn.Depth = 0;
             transferLayoutbtn.HighEmphasis = true;
             transferLayoutbtn.Icon = null;
-            transferLayoutbtn.Location = new Point(251, 590);
+            transferLayoutbtn.Location = new Point(403, 592);
             transferLayoutbtn.Margin = new Padding(4, 6, 4, 6);
             transferLayoutbtn.MouseState = MaterialSkin.MouseState.HOVER;
             transferLayoutbtn.Name = "transferLayoutbtn";
@@ -71,26 +70,7 @@
             transferLayoutbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             transferLayoutbtn.UseAccentColor = false;
             transferLayoutbtn.UseVisualStyleBackColor = true;
-            // 
-            // saveLayoutbtn
-            // 
-            saveLayoutbtn.AutoSize = false;
-            saveLayoutbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            saveLayoutbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            saveLayoutbtn.Depth = 0;
-            saveLayoutbtn.HighEmphasis = true;
-            saveLayoutbtn.Icon = null;
-            saveLayoutbtn.Location = new Point(600, 590);
-            saveLayoutbtn.Margin = new Padding(4, 6, 4, 6);
-            saveLayoutbtn.MouseState = MaterialSkin.MouseState.HOVER;
-            saveLayoutbtn.Name = "saveLayoutbtn";
-            saveLayoutbtn.NoAccentTextColor = Color.Empty;
-            saveLayoutbtn.Size = new Size(213, 36);
-            saveLayoutbtn.TabIndex = 35;
-            saveLayoutbtn.Text = "Save Machine Layout";
-            saveLayoutbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            saveLayoutbtn.UseAccentColor = false;
-            saveLayoutbtn.UseVisualStyleBackColor = true;
+            transferLayoutbtn.Click += transferLayoutbtn_Click;
             // 
             // pictureBox1
             // 
@@ -189,7 +169,6 @@
             Controls.Add(A1);
             Controls.Add(pictureBox1);
             Controls.Add(transferLayoutbtn);
-            Controls.Add(saveLayoutbtn);
             Name = "LayoutControl";
             Size = new Size(1080, 665);
             Load += LayoutControl_Load;
@@ -208,7 +187,6 @@
 
         #endregion
         private MaterialSkin.Controls.MaterialButton transferLayoutbtn;
-        private MaterialSkin.Controls.MaterialButton saveLayoutbtn;
         private PictureBox pictureBox1;
         private PictureBox A1;
         private PictureBox A2;
