@@ -192,6 +192,7 @@
             Controls.Add(saveLayoutbtn);
             Name = "LayoutControl";
             Size = new Size(1080, 665);
+            Load += LayoutControl_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)A1).EndInit();
             ((System.ComponentModel.ISupportInitialize)A2).EndInit();
