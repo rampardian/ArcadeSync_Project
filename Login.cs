@@ -70,15 +70,24 @@ namespace ArcadeSync_Project
 
                         int result = (int)cmd.ExecuteScalar();
 
-                        if (result > 0)
+                        string roleQuery = "SELECT Role FROM Employee WHERE Username = ? AND Password = ?";
+                        using (OleDbCommand roleCmd = new OleDbCommand(roleQuery, conn))
                         {
-                            MainMenu main = new MainMenu();
-                            main.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            roleCmd.Parameters.AddWithValue("?", usernametxtbx.Text.Trim());
+                            roleCmd.Parameters.AddWithValue("?", passwordtxtbx.Text.Trim());
+
+                            string role = roleCmd.ExecuteScalar()?.ToString();
+
+                            if (!string.IsNullOrEmpty(role))
+                            {
+                                MainMenu main = new MainMenu(role);
+                                main.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Role not found.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                     }
                 }

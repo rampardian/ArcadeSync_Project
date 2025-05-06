@@ -15,20 +15,44 @@ namespace ArcadeSync_Project
 {
     public partial class MainMenu : MaterialForm
     {
-        public MainMenu()
+        private string userRole;
+
+        public MainMenu(string role)
         {
             InitializeComponent();
+            userRole = role;
+            ConfigureTabsByRole();
 
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Red700,  // Primary Color (Timezone Red)
-                Primary.Red900,  // Dark Primary Color
-                Primary.Red500,  // Light Primary Color
-                Accent.Yellow700, // Accent Color (Timezone Yellow)
-                TextShade.WHITE   // Text Color
+                Primary.Red700,
+                Primary.Red900,
+                Primary.Red500,
+                Accent.Yellow700,
+                TextShade.WHITE
             );
+        }
+
+        private void ConfigureTabsByRole()
+        {
+
+            // Manager
+            if (userRole != "Manager")
+            {
+                MMTabControl1.TabPages.Remove(ShiftSched);
+                MMTabControl1.TabPages.Remove(Registry);
+                MMTabControl1.TabPages.Remove(Layout);
+                MMTabControl1.TabPages.Remove(CredAna);
+                MMTabControl1.TabPages.Remove(MainSched);
+            }
+
+            // Employee
+            if (userRole != "Employee")
+            {
+                MMTabControl1.TabPages.Remove(RentalSys);
+            }
         }
 
         private void MMTabControl1_SelectedIndexChanged(object sender, EventArgs e)
