@@ -50,6 +50,8 @@
             EmployeeMana = new TabPage();
             EmployManaPanel = new Panel();
             MMTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            MainSched = new TabPage();
+            MainSchedpanel = new Panel();
             RentAna.SuspendLayout();
             CredAna.SuspendLayout();
             Layout.SuspendLayout();
@@ -60,6 +62,7 @@
             ShiftSched.SuspendLayout();
             EmployeeMana.SuspendLayout();
             MMTabControl1.SuspendLayout();
+            MainSched.SuspendLayout();
             SuspendLayout();
             // 
             // imageList1
@@ -77,6 +80,7 @@
             imageList1.Images.SetKeyName(7, "layout.png");
             imageList1.Images.SetKeyName(8, "credA.png");
             imageList1.Images.SetKeyName(9, "RentA.png");
+            imageList1.Images.SetKeyName(10, "Maintenance.png");
             // 
             // RentAna
             // 
@@ -92,7 +96,7 @@
             // 
             // TotRentPanel
             // 
-            TotRentPanel.Dock = DockStyle.Fill;
+            TotRentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             TotRentPanel.Location = new Point(3, 3);
             TotRentPanel.Name = "TotRentPanel";
             TotRentPanel.Size = new Size(1080, 630);
@@ -112,7 +116,7 @@
             // 
             // EarnedCredPanel
             // 
-            EarnedCredPanel.Dock = DockStyle.Fill;
+            EarnedCredPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             EarnedCredPanel.Location = new Point(3, 3);
             EarnedCredPanel.Name = "EarnedCredPanel";
             EarnedCredPanel.Size = new Size(1080, 630);
@@ -131,10 +135,10 @@
             // 
             // LayoutPanel
             // 
-            LayoutPanel.Dock = DockStyle.Fill;
+            LayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             LayoutPanel.Location = new Point(0, 0);
             LayoutPanel.Name = "LayoutPanel";
-            LayoutPanel.Size = new Size(1086, 636);
+            LayoutPanel.Size = new Size(1086, 671);
             LayoutPanel.TabIndex = 0;
             // 
             // Registry
@@ -150,10 +154,10 @@
             // 
             // RegistryPanel
             // 
-            RegistryPanel.Dock = DockStyle.Fill;
+            RegistryPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             RegistryPanel.Location = new Point(0, 0);
             RegistryPanel.Name = "RegistryPanel";
-            RegistryPanel.Size = new Size(1086, 636);
+            RegistryPanel.Size = new Size(1086, 671);
             RegistryPanel.TabIndex = 0;
             // 
             // Inventory
@@ -169,10 +173,10 @@
             // 
             // InventoryPanel
             // 
-            InventoryPanel.Dock = DockStyle.Fill;
+            InventoryPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             InventoryPanel.Location = new Point(0, 0);
             InventoryPanel.Name = "InventoryPanel";
-            InventoryPanel.Size = new Size(1086, 636);
+            InventoryPanel.Size = new Size(1086, 671);
             InventoryPanel.TabIndex = 0;
             // 
             // Logs
@@ -188,10 +192,10 @@
             // 
             // CalenderPanel
             // 
-            CalenderPanel.Dock = DockStyle.Fill;
+            CalenderPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             CalenderPanel.Location = new Point(0, 0);
             CalenderPanel.Name = "CalenderPanel";
-            CalenderPanel.Size = new Size(1086, 636);
+            CalenderPanel.Size = new Size(1086, 671);
             CalenderPanel.TabIndex = 0;
             // 
             // RentalSys
@@ -208,10 +212,10 @@
             // 
             // RentalPanel
             // 
-            RentalPanel.Dock = DockStyle.Fill;
+            RentalPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             RentalPanel.Location = new Point(3, 3);
             RentalPanel.Name = "RentalPanel";
-            RentalPanel.Size = new Size(1080, 630);
+            RentalPanel.Size = new Size(1080, 665);
             RentalPanel.TabIndex = 0;
             // 
             // ShiftSched
@@ -227,10 +231,10 @@
             // 
             // ShiftSchedPanel
             // 
-            ShiftSchedPanel.Dock = DockStyle.Fill;
+            ShiftSchedPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ShiftSchedPanel.Location = new Point(0, 0);
             ShiftSchedPanel.Name = "ShiftSchedPanel";
-            ShiftSchedPanel.Size = new Size(1086, 636);
+            ShiftSchedPanel.Size = new Size(1086, 671);
             ShiftSchedPanel.TabIndex = 0;
             // 
             // EmployeeMana
@@ -255,6 +259,7 @@
             // 
             // MMTabControl1
             // 
+            MMTabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             MMTabControl1.Controls.Add(EmployeeMana);
             MMTabControl1.Controls.Add(ShiftSched);
             MMTabControl1.Controls.Add(RentalSys);
@@ -264,8 +269,8 @@
             MMTabControl1.Controls.Add(Layout);
             MMTabControl1.Controls.Add(CredAna);
             MMTabControl1.Controls.Add(RentAna);
+            MMTabControl1.Controls.Add(MainSched);
             MMTabControl1.Depth = 0;
-            MMTabControl1.Dock = DockStyle.Fill;
             MMTabControl1.ImageList = imageList1;
             MMTabControl1.Location = new Point(3, 64);
             MMTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -275,6 +280,25 @@
             MMTabControl1.Size = new Size(1094, 714);
             MMTabControl1.TabIndex = 0;
             MMTabControl1.SelectedIndexChanged += MMTabControl1_SelectedIndexChanged;
+            // 
+            // MainSched
+            // 
+            MainSched.Controls.Add(MainSchedpanel);
+            MainSched.ImageKey = "Maintenance.png";
+            MainSched.Location = new Point(4, 74);
+            MainSched.Name = "MainSched";
+            MainSched.Size = new Size(1086, 636);
+            MainSched.TabIndex = 9;
+            MainSched.Text = "Maintenance Schedule";
+            MainSched.UseVisualStyleBackColor = true;
+            // 
+            // MainSchedpanel
+            // 
+            MainSchedpanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            MainSchedpanel.Location = new Point(3, 3);
+            MainSchedpanel.Name = "MainSchedpanel";
+            MainSchedpanel.Size = new Size(1080, 633);
+            MainSchedpanel.TabIndex = 0;
             // 
             // MainMenu
             // 
@@ -298,6 +322,7 @@
             ShiftSched.ResumeLayout(false);
             EmployeeMana.ResumeLayout(false);
             MMTabControl1.ResumeLayout(false);
+            MainSched.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -323,5 +348,7 @@
         private Panel EmployManaPanel;
         private MaterialSkin.Controls.MaterialTabControl MMTabControl1;
         private Panel TotRentPanel;
+        private TabPage MainSched;
+        private Panel MainSchedpanel;
     }
 }

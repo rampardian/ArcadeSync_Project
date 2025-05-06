@@ -78,6 +78,9 @@ namespace ArcadeSync_Project
                         case "Total Rentals":
                             selectedControl = new TotRentControl();
                             break;
+                        case "Maintenance Schedule":
+                            selectedControl = new MainSchedControl();
+                            break;
                     }
 
                     if(selectedControl != null)
