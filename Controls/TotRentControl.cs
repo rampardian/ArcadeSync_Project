@@ -23,8 +23,14 @@ namespace ArcadeSync_Project.Controls
         {
             InitializeComponent();
 
-            StartRentaldtp.ValueChanged += StartRentaldtp_ValueChanged;
-            dataRangeRentcmbbx.SelectedIndexChanged += DataRangeRentcmbbx_SelectedIndexChanged;
+            TotalRentalgv.DefaultCellStyle.ForeColor = Color.Black;
+            TotalRentalgv.DefaultCellStyle.BackColor = Color.White;
+            TotalRentalgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            TotalRentalgv.DefaultCellStyle.SelectionBackColor = Color.DarkBlue;
+
+            TotalRentalgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            TotalRentalgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+
             dataRangeRentcmbbx.SelectedIndex = 0;
             LoadRentalData();
         }
