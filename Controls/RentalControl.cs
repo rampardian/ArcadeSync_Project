@@ -140,7 +140,7 @@ namespace ArcadeSync_Project.Controls
         {
             if (rentaldgv.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a row from the machine list to return.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a row from the rental list to return a machine.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -149,7 +149,7 @@ namespace ArcadeSync_Project.Controls
             using (OleDbConnection conn = new OleDbConnection(connStr))
             {
                 conn.Open();
-                string updateQuery = "UPDATE ArcadeInventory SET Status = 'Stored' WHERE MachineID = ?";
+                string updateQuery = "UPDATE ArcadeInventory SET Status = 'Stored', Location = 'Storage' WHERE MachineID = ?";
                 using (OleDbCommand cmd = new OleDbCommand(updateQuery, conn))
                 {
                     cmd.Parameters.AddWithValue(null, machineID);
@@ -157,8 +157,8 @@ namespace ArcadeSync_Project.Controls
 
                     if (affected > 0)
                     {
-                        MessageBox.Show("Machine successfully marked as returned and status set to 'Stored'.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadAvailableMachines(); // refresh the rentaldgv
+                        MessageBox.Show("Machine has been returned. Status set to 'Stored' and location updated to 'Storage'.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadAvailableMachines(); // Refresh the grid
                     }
                     else
                     {

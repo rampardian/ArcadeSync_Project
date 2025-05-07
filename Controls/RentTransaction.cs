@@ -115,6 +115,14 @@ namespace ArcadeSync_Project.Controls
                 }
             }
 
+            using (OleDbConnection updateConn = new OleDbConnection(connStr))
+            {
+                updateConn.Open();
+                var updateCmd = new OleDbCommand("UPDATE ArcadeInventory SET Status = 'Rented', Location = 'Rental Event' WHERE MachineName = ?", updateConn);
+                updateCmd.Parameters.AddWithValue(null, machineName);
+                updateCmd.ExecuteNonQuery();
+            }
+
 
             using (OleDbConnection conn = new OleDbConnection(connStr))
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -167,7 +175,7 @@ namespace ArcadeSync_Project.Controls
 
                     g.DrawString("Thank you!", font, Brushes.Black, new PointF(10, y + 20));
                 }
-
+                //receipt generator, saved @Documents
                 string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"{rentalID}_receipt.png");
                 receipt.Save(path, System.Drawing.Imaging.ImageFormat.Png);
                 MessageBox.Show($"Receipt saved at:\n{path}", "Receipt Generated", MessageBoxButtons.OK, MessageBoxIcon.Information);
