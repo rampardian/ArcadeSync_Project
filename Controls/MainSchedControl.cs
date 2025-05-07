@@ -19,7 +19,15 @@ namespace ArcadeSync_Project.Controls
         {
             InitializeComponent();
             LoadMaintenanceTable();
-            MainScheddgv.DefaultCellStyle.ForeColor = Color.White; 
+
+            MainScheddgv.DefaultCellStyle.ForeColor = Color.Black;
+            MainScheddgv.DefaultCellStyle.BackColor = Color.White;
+            MainScheddgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            MainScheddgv.DefaultCellStyle.SelectionBackColor = Color.DarkBlue;
+
+            MainScheddgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            MainScheddgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            MainScheddgv.EnableHeadersVisualStyles = false;
         }
 
         private void LoadMaintenanceTable()
