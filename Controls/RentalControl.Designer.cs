@@ -51,8 +51,11 @@
             rentMachinePictureBox = new PictureBox();
             label10 = new Label();
             rentIDtxtbx = new TextBox();
+            infoRentdgv = new DataGridView();
+            returnbtn = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)rentaldgv).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rentMachinePictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)infoRentdgv).BeginInit();
             SuspendLayout();
             // 
             // startRentdtp
@@ -175,12 +178,12 @@
             RentPayTransactbtn.Depth = 0;
             RentPayTransactbtn.HighEmphasis = true;
             RentPayTransactbtn.Icon = null;
-            RentPayTransactbtn.Location = new Point(658, 608);
+            RentPayTransactbtn.Location = new Point(723, 608);
             RentPayTransactbtn.Margin = new Padding(4, 6, 4, 6);
             RentPayTransactbtn.MouseState = MaterialSkin.MouseState.HOVER;
             RentPayTransactbtn.Name = "RentPayTransactbtn";
             RentPayTransactbtn.NoAccentTextColor = Color.Empty;
-            RentPayTransactbtn.Size = new Size(343, 45);
+            RentPayTransactbtn.Size = new Size(278, 45);
             RentPayTransactbtn.TabIndex = 30;
             RentPayTransactbtn.Text = "Payment and Transaction";
             RentPayTransactbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -227,7 +230,7 @@
             rentaldgv.Location = new Point(30, 30);
             rentaldgv.Name = "rentaldgv";
             rentaldgv.RowHeadersWidth = 51;
-            rentaldgv.Size = new Size(687, 432);
+            rentaldgv.Size = new Size(687, 213);
             rentaldgv.TabIndex = 13;
             rentaldgv.CellClick += rentaldgv_CellClick;
             // 
@@ -256,10 +259,43 @@
             rentIDtxtbx.Size = new Size(246, 27);
             rentIDtxtbx.TabIndex = 40;
             // 
+            // infoRentdgv
+            // 
+            infoRentdgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            infoRentdgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            infoRentdgv.Location = new Point(30, 249);
+            infoRentdgv.Name = "infoRentdgv";
+            infoRentdgv.RowHeadersWidth = 51;
+            infoRentdgv.Size = new Size(687, 213);
+            infoRentdgv.TabIndex = 42;
+            // 
+            // returnbtn
+            // 
+            returnbtn.AutoSize = false;
+            returnbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            returnbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            returnbtn.Depth = 0;
+            returnbtn.HighEmphasis = true;
+            returnbtn.Icon = null;
+            returnbtn.Location = new Point(439, 608);
+            returnbtn.Margin = new Padding(4, 6, 4, 6);
+            returnbtn.MouseState = MaterialSkin.MouseState.HOVER;
+            returnbtn.Name = "returnbtn";
+            returnbtn.NoAccentTextColor = Color.Empty;
+            returnbtn.Size = new Size(278, 45);
+            returnbtn.TabIndex = 43;
+            returnbtn.Text = "Return Machine";
+            returnbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            returnbtn.UseAccentColor = false;
+            returnbtn.UseVisualStyleBackColor = true;
+            returnbtn.Click += returnbtn_Click;
+            // 
             // RentalControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(returnbtn);
+            Controls.Add(infoRentdgv);
             Controls.Add(label10);
             Controls.Add(rentIDtxtbx);
             Controls.Add(rentMachinePictureBox);
@@ -288,6 +324,7 @@
             Load += RentalControl_Load;
             ((System.ComponentModel.ISupportInitialize)rentaldgv).EndInit();
             ((System.ComponentModel.ISupportInitialize)rentMachinePictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)infoRentdgv).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -318,5 +355,7 @@
         private PictureBox rentMachinePictureBox;
         private Label label10;
         private TextBox rentIDtxtbx;
+        private DataGridView infoRentdgv;
+        private MaterialSkin.Controls.MaterialButton returnbtn;
     }
 }

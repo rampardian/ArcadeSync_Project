@@ -98,6 +98,24 @@ namespace ArcadeSync_Project.Controls
         {
             string query = @"INSERT INTO Rental (RentalID, RentalEventName, RentalMachine, EmployeeID, EmployeeName, RenterName, PhoneNum, RentVenue, RentDate, ReturnDate, RentalCost, AmountPaid, ChangeDue, PaymentMethod, Notes) VALUES (@rentalID, @eventName, @machine, @empID, @empName, @renter, @phone, @venue, @rentDate, @returnDate, @cost, @paid, @change, @method, @notes)";
 
+            using (OleDbConnection statusConn = new OleDbConnection(connStr))
+            {
+                statusConn.Open();
+                string statusQuery = "SELECT Status FROM ArcadeInventory WHERE MachineName = @machine";
+                using (OleDbCommand statusCmd = new OleDbCommand(statusQuery, statusConn))
+                {
+                    statusCmd.Parameters.AddWithValue("@machine", machineName);
+                    var status = statusCmd.ExecuteScalar()?.ToString();
+
+                    if (status != "Stored")
+                    {
+                        MessageBox.Show("This machine is not available for rental. Only machines in 'Stored' status can be rented.", "Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+            }
+
+
             using (OleDbConnection conn = new OleDbConnection(connStr))
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
@@ -119,6 +137,40 @@ namespace ArcadeSync_Project.Controls
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
+
+                Bitmap receipt = new Bitmap(400, 400);
+                using (Graphics g = Graphics.FromImage(receipt))
+                {
+                    g.Clear(Color.White);
+                    using Font font = new Font("Arial", 10);
+                    float y = 10;
+
+                    void PrintLine(string label, string value)
+                    {
+                        g.DrawString($"{label}: {value}", font, Brushes.Black, new PointF(10, y));
+                        y += 20;
+                    }
+
+                    PrintLine("Rental ID", rentalID);
+                    PrintLine("Event", eventName);
+                    PrintLine("Machine", machineName);
+                    PrintLine("Employee", employeeName);
+                    PrintLine("Renter", renterName);
+                    PrintLine("Phone", phoneNum);
+                    PrintLine("Venue", venue);
+                    PrintLine("Rent Date", rentDate.ToShortDateString());
+                    PrintLine("Return Date", returnDate.ToShortDateString());
+                    PrintLine("Cost", rentalCosttxtbx.Text);
+                    PrintLine("Paid", amounttxtbx.Text);
+                    PrintLine("Change", rentChangetxtbx.Text);
+                    PrintLine("Payment", payMethodcmbbx.Text);
+
+                    g.DrawString("Thank you!", font, Brushes.Black, new PointF(10, y + 20));
+                }
+
+                string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"{rentalID}_receipt.png");
+                receipt.Save(path, System.Drawing.Imaging.ImageFormat.Png);
+                MessageBox.Show($"Receipt saved at:\n{path}", "Receipt Generated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // update machine status
                 string updateStatusQuery = "UPDATE ArcadeInventory SET Status = @status WHERE MachineName = @machine";

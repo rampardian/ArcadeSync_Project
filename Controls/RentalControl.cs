@@ -31,10 +31,29 @@ namespace ArcadeSync_Project.Controls
             rentaldgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
             rentaldgv.EnableHeadersVisualStyles = false;
 
-            rentaldgv.CellClick += rentaldgv_CellClick;
+            infoRentdgv.DefaultCellStyle.ForeColor = Color.Black;
+            infoRentdgv.DefaultCellStyle.BackColor = Color.White;
+            infoRentdgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            infoRentdgv.DefaultCellStyle.SelectionBackColor = Color.DarkBlue;
+
+            infoRentdgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            infoRentdgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            infoRentdgv.EnableHeadersVisualStyles = false;
+
+
+            LoadRentalData();
 
 
             LoadAvailableMachines();
+        }
+
+        private void LoadRentalData()
+        {
+            using var conn = new OleDbConnection(connStr);
+            var adapter = new OleDbDataAdapter("SELECT * FROM Rental", conn);
+            var table = new DataTable();
+            adapter.Fill(table);
+            infoRentdgv.DataSource = table;
         }
 
         private void LoadAvailableMachines()
@@ -90,7 +109,7 @@ namespace ArcadeSync_Project.Controls
             {
                 return;
             }
-            
+
             string machineID = rentaldgv.Rows[e.RowIndex].Cells["MachineID"].Value.ToString();
 
             string query = "SELECT ArcadeImage FROM ArcadeInventory WHERE MachineID = @id";
@@ -113,6 +132,38 @@ namespace ArcadeSync_Project.Controls
                 else
                 {
                     rentMachinePictureBox.Image = null;
+                }
+            }
+        }
+
+        private void returnbtn_Click(object sender, EventArgs e)
+        {
+            if (rentaldgv.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row from the machine list to return.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string machineID = rentaldgv.SelectedRows[0].Cells["MachineID"].Value.ToString();
+
+            using (OleDbConnection conn = new OleDbConnection(connStr))
+            {
+                conn.Open();
+                string updateQuery = "UPDATE ArcadeInventory SET Status = 'Stored' WHERE MachineID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(updateQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue(null, machineID);
+                    int affected = cmd.ExecuteNonQuery();
+
+                    if (affected > 0)
+                    {
+                        MessageBox.Show("Machine successfully marked as returned and status set to 'Stored'.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadAvailableMachines(); // refresh the rentaldgv
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update failed. Machine ID may not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
