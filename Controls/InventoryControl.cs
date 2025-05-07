@@ -209,7 +209,26 @@ namespace ArcadeSync_Project.Controls
             if (open.ShowDialog() == DialogResult.OK)
             {
                 machinePictureBox.Image = Image.FromFile(open.FileName);
-                machinePictureBox.Tag = open.FileName; 
+                machinePictureBox.Tag = open.FileName;
+            }
+        }
+
+        private void statuscmbbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (statuscmbbx.Text)
+            {
+                case "Rented":
+                    locationtxtbx.Text = "Rental Event";
+                    break;
+                case "Maintenance":
+                    locationtxtbx.Text = "Repair Station";
+                    break;
+                case "Stored":
+                    locationtxtbx.Text = "Storage";
+                    break;
+                default:
+                    
+                    break;
             }
         }
     }

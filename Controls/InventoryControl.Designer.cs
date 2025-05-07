@@ -119,6 +119,7 @@
             statuscmbbx.Size = new Size(322, 49);
             statuscmbbx.StartIndex = 0;
             statuscmbbx.TabIndex = 26;
+            statuscmbbx.SelectedIndexChanged += statuscmbbx_SelectedIndexChanged;
             // 
             // machIDtxtbx
             // 
