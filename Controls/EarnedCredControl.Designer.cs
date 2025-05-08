@@ -71,7 +71,8 @@
             // dataRangecmbbx
             // 
             dataRangecmbbx.FormattingEnabled = true;
-            dataRangecmbbx.Items.AddRange(new object[] { "Weekly", "Montly", "Yearly" });
+            dataRangecmbbx.DropDownStyle = ComboBoxStyle.DropDownList;
+            dataRangecmbbx.Items.AddRange(new object[] { "Weekly", "Montly", "Yearly" }); 
             dataRangecmbbx.Location = new Point(550, 558);
             dataRangecmbbx.Name = "dataRangecmbbx";
             dataRangecmbbx.Size = new Size(250, 28);

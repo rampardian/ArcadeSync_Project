@@ -19,7 +19,7 @@ namespace ArcadeSync_Project.Controls
     public partial class EarnedCredControl : UserControl
     {
         private string connStr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jared Adlawan\OneDrive\ドキュメント\ArcadeSync Database\ArcadeSync.accdb";
-        
+
 
         public EarnedCredControl()
         {
@@ -95,7 +95,7 @@ namespace ArcadeSync_Project.Controls
 
         private int GetRangeDays()
         {
-            string range = dataRangecmbbx.SelectedItem?.ToString() ?? "Weekly"; 
+            string range = dataRangecmbbx.SelectedItem?.ToString() ?? "Weekly";
             return range switch
             {
                 "Weekly" => 7,
@@ -104,7 +104,7 @@ namespace ArcadeSync_Project.Controls
                 _ => 7,
             };
         }
-        
+
         private void LoadDataGrid(DataTable dt)
         {
             var result = dt.AsEnumerable()
@@ -119,19 +119,19 @@ namespace ArcadeSync_Project.Controls
             TotalEarnedgv.DataSource = result;
         }
 
-        private void LoadLineGraph(DataTable dt)    
+        private void LoadLineGraph(DataTable dt)
         {
-            var model = new PlotModel 
-            { 
+            var model = new PlotModel
+            {
                 Title = "Earned Credits Over Time",
                 TextColor = OxyColors.Black,
                 PlotAreaBorderColor = OxyColors.Gray,
                 Background = OxyColors.White
             };
-            model.Axes.Add(new DateTimeAxis 
-            { 
-                Position = AxisPosition.Bottom, 
-                StringFormat = "MM-dd", 
+            model.Axes.Add(new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                StringFormat = "MM-dd",
                 Title = "Date",
                 TextColor = OxyColors.Black,
                 TitleColor = OxyColors.Black,
@@ -140,14 +140,14 @@ namespace ArcadeSync_Project.Controls
             });
 
 
-            var yAxis = new LinearAxis 
-            { 
-                Position = AxisPosition.Left, 
-                Title = "Credits Earned", 
+            var yAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Credits Earned",
             };
 
             double min = 0, max = 0, step = 0;
-            switch (dataRangecmbbx.SelectedItem.ToString()) 
+            switch (dataRangecmbbx.SelectedItem.ToString())
             {
                 case "Weekly": min = 500; max = 5000; step = 500; break;
                 case "Montly": min = 2000; max = 20000; step = 2000; break;
@@ -182,6 +182,77 @@ namespace ArcadeSync_Project.Controls
             earnedCredPicBx.Image = new Bitmap(bmp);
         }
 
+        private void InitializeComponent()
+        {
+            TotalEarnedgv = new DataGridView();
+            showDatabtn = new Button();
+            StartEarndtp = new DateTimePicker();
+            earnedCredPicBx = new PictureBox();
+            dataRangecmbbx = new ComboBox();
+            ((ISupportInitialize)TotalEarnedgv).BeginInit();
+            ((ISupportInitialize)earnedCredPicBx).BeginInit();
+            SuspendLayout();
+            // 
+            // TotalEarnedgv
+            // 
+            TotalEarnedgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TotalEarnedgv.Location = new Point(48, 354);
+            TotalEarnedgv.Name = "TotalEarnedgv";
+            TotalEarnedgv.RowHeadersWidth = 51;
+            TotalEarnedgv.Size = new Size(918, 221);
+            TotalEarnedgv.TabIndex = 0;
+            // 
+            // showDatabtn
+            // 
+            showDatabtn.Location = new Point(872, 604);
+            showDatabtn.Name = "showDatabtn";
+            showDatabtn.Size = new Size(94, 29);
+            showDatabtn.TabIndex = 1;
+            showDatabtn.Text = "show data";
+            showDatabtn.UseVisualStyleBackColor = true;
+            // 
+            // StartEarndtp
+            // 
+            StartEarndtp.Location = new Point(122, 603);
+            StartEarndtp.Name = "StartEarndtp";
+            StartEarndtp.Size = new Size(250, 27);
+            StartEarndtp.TabIndex = 2;
+            // 
+            // earnedCredPicBx
+            // 
+            earnedCredPicBx.Location = new Point(48, 47);
+            earnedCredPicBx.Name = "earnedCredPicBx";
+            earnedCredPicBx.Size = new Size(932, 286);
+            earnedCredPicBx.TabIndex = 3;
+            earnedCredPicBx.TabStop = false;
+            // 
+            // dataRangecmbbx
+            // 
+            dataRangecmbbx.FormattingEnabled = true;
+            dataRangecmbbx.Items.AddRange(new object[] { "Weekly", "Montly", "Yearly" });
+            dataRangecmbbx.Location = new Point(409, 602);
+            dataRangecmbbx.Name = "dataRangecmbbx";
+            dataRangecmbbx.Size = new Size(151, 28);
+            dataRangecmbbx.TabIndex = 4;
+            // 
+            // EarnedCredControl
+            // 
+            Controls.Add(dataRangecmbbx);
+            Controls.Add(earnedCredPicBx);
+            Controls.Add(StartEarndtp);
+            Controls.Add(showDatabtn);
+            Controls.Add(TotalEarnedgv);
+            Name = "EarnedCredControl";
+            Size = new Size(1080, 665);
+            ((ISupportInitialize)TotalEarnedgv).EndInit();
+            ((ISupportInitialize)earnedCredPicBx).EndInit();
+            ResumeLayout(false);
 
+        }
+        private DataGridView TotalEarnedgv;
+        private Button showDatabtn;
+        private DateTimePicker StartEarndtp;
+        private PictureBox earnedCredPicBx;
+        private ComboBox dataRangecmbbx;
     }
 }
