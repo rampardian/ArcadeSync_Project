@@ -11,14 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        
 
         #region Component Designer generated code
 
@@ -38,7 +31,6 @@
             earnedCredPicBx = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).BeginInit();
             ((System.ComponentModel.ISupportInitialize)earnedCredPicBx).BeginInit();
-            SuspendLayout();
             // 
             // label1
             // 
@@ -75,7 +67,6 @@
             showDatabtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             showDatabtn.UseAccentColor = false;
             showDatabtn.UseVisualStyleBackColor = true;
-            showDatabtn.Click += showDatabtn_Click;
             // 
             // dataRangecmbbx
             // 
@@ -124,22 +115,7 @@
             // 
             // EarnedCredControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(earnedCredPicBx);
-            Controls.Add(label4);
-            Controls.Add(TotalEarnedgv);
-            Controls.Add(label3);
-            Controls.Add(dataRangecmbbx);
-            Controls.Add(showDatabtn);
-            Controls.Add(label1);
-            Controls.Add(StartEarndtp);
-            Name = "EarnedCredControl";
-            Size = new Size(1080, 665);
-            ((System.ComponentModel.ISupportInitialize)TotalEarnedgv).EndInit();
-            ((System.ComponentModel.ISupportInitialize)earnedCredPicBx).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            
         }
 
         #endregion
